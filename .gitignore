@@ -1,0 +1,44 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/.next
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
+/static/.analyze/*
+/server-prod.js
+.scripts/build*.sh
+!.scripts/build-docker.sh
+*server.build.js
+!.gitkeep
+server-dist
+app-dist
+out
+feature-flags.json
+dump.rdb
+.vscode/
+public/.analyze
+public/.well-known
+
+# PWA files
+public/sw.js
+public/workbox-*.js
+public/workbox-*.js.map
+public/worker-*.js
+public/worker-*.js.map
+public/sw.js.map
+public/fallback-*.js
+public/fallback-*.js.map
