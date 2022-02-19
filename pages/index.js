@@ -17,6 +17,9 @@ export default function Home() {
         <p className="description">
           email me at: <a href='mailto:kashanshah@hotmail.com'>kashanshah@hotmail.com</a>
         </p>
+        <p className="description">
+          check: <a href='/docs/resume-syed-kashan-ali-shah.pdf'>my resume</a>
+        </p>
 
       </main>
 
@@ -56,7 +59,7 @@ export default function Home() {
         }
 
         .title {
-          margin: 0;
+          margin: 0 auto 1rem;
           line-height: 1.15;
           font-size: 4rem;
         }
@@ -69,6 +72,8 @@ export default function Home() {
         .description {
           line-height: 1.5;
           font-size: 1.5rem;
+          margin-top: 0.25rem;
+          margin-bottom: 0.25rem;
         }
 
         code {
