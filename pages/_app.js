@@ -1,16 +1,23 @@
-import Router from "next/router";
+import Router from 'next/router';
 import 'antd/dist/antd.css';
 import 'normalize.css';
+import { ChakraProvider } from '@chakra-ui/react';
 
-Router.events.on("routeChangeComplete", ()=>{
-    alert('complete');
-})
-Router.events.on("routeChangeStart", ()=>{
-    alert('start');
-})
+Router.events.on('routeChangeComplete', () => {
+  // alert('complete');
+});
+Router.events.on('routeChangeStart', () => {
+  // alert('start');
+});
 
 function MyApp({ Component, pageProps }) {
-    return <div className='asdasd'> <Component {...pageProps} /></div>
+  return (
+    <ChakraProvider>
+      <div className='asdasd'>
+        <Component {...pageProps} />
+      </div>
+    </ChakraProvider>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -25,4 +32,4 @@ function MyApp({ Component, pageProps }) {
 //   return { ...appProps }
 // }
 
-export default MyApp
+export default MyApp;

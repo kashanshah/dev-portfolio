@@ -1,0 +1,9 @@
+dist
+.next
+.prettierignore
+node_modules
+yarn.lock
+nodemon.json
+.yarnrc
+public
+

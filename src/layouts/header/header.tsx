@@ -1,6 +1,10 @@
 type HeaderProps = {
-    title?: string;
-}
+  title?: string;
+};
 export const Header = (props: HeaderProps) => {
-    return <head><title>{props.title}</title></head>
-}
+  return (
+    <head>
+      <title>{props.title}</title>
+    </head>
+  );
+};
