@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Heading, IconButton, Image, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
-import { FacebookFilled, FileFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
-import { randomNumberBetween } from '../../utils/helpers.ts';
+import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
+import { randomNumberBetween } from '../../utils/helpers';
 import { useState } from 'react';
 
 export const HomeScreen = () => {
@@ -38,12 +38,10 @@ export const HomeScreen = () => {
         onClick={() => updateBg()}
         my={['32px', null]}
       >
-        <Stack isInline spacing='0.5rem'>
-          <Heading size='md'>Hi</Heading>
-          <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={transitionCSS}>
-            👋
-          </Box>
-        </Stack>
+        <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={transitionCSS} mb='.25rem'>
+          👋
+        </Box>
+        <Heading size='md'>Hi, I am</Heading>
         <Heading mb='1rem' color='blue.500'>
           Syed Kashan Ali Shah!
         </Heading>
@@ -66,6 +64,11 @@ export const HomeScreen = () => {
           <Link isExternal href='https://fb.me/crickashan'>
             <IconButton variant='link' colorScheme='facebook' fontSize='2xl' aria-label='facebook'>
               <FacebookFilled />
+            </IconButton>
+          </Link>
+          <Link isExternal href='https://github.com/kashanshah'>
+            <IconButton variant='link' colorScheme='github' fontSize='2xl' aria-label='github'>
+              <GithubFilled />
             </IconButton>
           </Link>
           <Link isExternal href='https://ae.linkedin.com/kashanshah'>
