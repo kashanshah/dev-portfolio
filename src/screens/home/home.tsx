@@ -1,6 +1,13 @@
 import { Box, Button, Flex, Heading, IconButton, Image, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
-import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
+import {
+  FacebookFilled,
+  FileFilled,
+  GithubFilled,
+  InstagramFilled,
+  LinkedinFilled,
+  LoadingOutlined,
+} from '@ant-design/icons';
 import { randomNumberBetween } from '../../utils/helpers';
 import { useState } from 'react';
 
@@ -23,8 +30,7 @@ export const HomeScreen = () => {
           height={['auto', '100vh']}
           w='100%'
           objectFit='cover'
-          fallback={<Box bg='blue.500'>Oops, the image couldn't be loaded</Box>}
-          fallbackSrc={'/images/1.jpeg'}
+          fallback={<LoadingOutlined spin style={{ fontSize: 'xxx-large' }} />}
         />
       </Flex>
       <Flex
@@ -53,7 +59,7 @@ export const HomeScreen = () => {
               </Button>
             </Tooltip>
           </Link>
-          <Link _hover={{ textDecoration: 'none' }} target='_blank' href='/docs/resume-syed-kashan-ali-shah.pdf'>
+          <Link _hover={{ textDecoration: 'none' }} target='_blank' href={'/docs/resume-syed-kashan-ali-shah.pdf'}>
             <Button leftIcon={<FileFilled />} variant='solid' colorScheme='blue'>
               View My Resume
             </Button>
