@@ -77,7 +77,7 @@ export const HomeScreen = () => {
               <GithubFilled />
             </IconButton>
           </Link>
-          <Link isExternal href='https://ae.linkedin.com/kashanshah'>
+          <Link isExternal href='https://ae.linkedin.com/in/kashanshah'>
             <IconButton variant='link' colorScheme='linkedin' fontSize='2xl' aria-label='linkedin'>
               <LinkedinFilled />
             </IconButton>
