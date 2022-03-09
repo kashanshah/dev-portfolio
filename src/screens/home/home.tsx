@@ -8,25 +8,27 @@ import {
   LinkedinFilled,
   LoadingOutlined,
 } from '@ant-design/icons';
-import { randomNumberBetween } from '../../utils/helpers';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateBG, updateHelloCss } from '@redux/commonSlice';
+import constants from '../../helpers/constants.json';
+import { RootState } from '@redux/store';
 
 export const HomeScreen = () => {
-  const [bgImage, setBgImage] = useState(randomNumberBetween(1, 12));
-  const [transitionCSS, setTransitionCSS] = useState('rotate(0) scale(1)');
-  const updateBg = () => setBgImage(randomNumberBetween(1, 12));
+  const dispatch = useDispatch();
+  const { helloCSS, homeBGImage } = useSelector((state: RootState) => state.common);
   return (
     <Flex
       alignItems='center'
       justifyContent='space-between'
       height={['auto', '100vh']}
       flexDirection={['column-reverse', 'row']}
+      minW='100%'
     >
-      <Flex w={['100%', '50%']} alignItems='center' justifyContent='center'>
+      <Flex minW={['100%', '50%']} alignItems='center' justifyContent='center'>
         <Image
-          onClick={() => updateBg()}
-          src={`/images/${bgImage}.jpeg`}
-          alt='Syed Kashan Ali Shah'
+          onClick={() => dispatch(updateBG())}
+          src={`/images/${homeBGImage}.jpeg`}
+          alt={constants.fullName}
           height={['auto', '100vh']}
           w='100%'
           objectFit='cover'
@@ -34,17 +36,17 @@ export const HomeScreen = () => {
         />
       </Flex>
       <Flex
-        w={['100%', '50%']}
+        minW={['100%', '50%']}
         alignItems='center'
         justifyContent='center'
         h='100%'
         flexDirection='column'
-        onMouseEnter={() => setTransitionCSS('rotate(45deg) scale(2)')}
-        onMouseLeave={() => setTransitionCSS('rotate(0deg) scale(1)')}
-        onClick={() => updateBg()}
+        onMouseEnter={() => dispatch(updateHelloCss('rotate(45deg) scale(2)'))}
+        onMouseLeave={() => dispatch(updateHelloCss('rotate(0deg) scale(1)'))}
+        onClick={() => dispatch(updateBG())}
         my={['32px', null]}
       >
-        <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={transitionCSS} mb='.25rem'>
+        <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={helloCSS} mb='.25rem'>
           👋
         </Box>
         <Heading size='md'>Hi, I am</Heading>

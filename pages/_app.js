@@ -2,6 +2,8 @@ import Router from 'next/router';
 import 'antd/dist/antd.css';
 import 'normalize.css';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Provider } from 'react-redux';
+import { store } from '../src/redux/store';
 
 Router.events.on('routeChangeComplete', () => {
   // alert('complete');
@@ -12,11 +14,13 @@ Router.events.on('routeChangeStart', () => {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <div className='asdasd'>
-        <Component {...pageProps} />
-      </div>
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider>
+        <div className='asdasd'>
+          <Component {...pageProps} />
+        </div>
+      </ChakraProvider>
+    </Provider>
   );
 }
 
