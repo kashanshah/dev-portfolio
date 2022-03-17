@@ -3,19 +3,19 @@
 
 import React from 'react';
 import getConfig from 'next/config';
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
-import { IncomingMessage } from 'http';
+import { Head, Html, Main, NextScript } from 'next/document';
 const { publicRuntimeConfig } = getConfig();
-const { gaId } = publicRuntimeConfig;
+const { gaId = 'UA-117582605-4' } = publicRuntimeConfig;
 
-const MyDocument = () => {
+const MyDocument = (props: any) => {
+  console.log(props);
   return (
     <Html>
       <Head />
       <body>
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `<!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=${gaId}"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${gaId}'); </script>`,
+            __html: `<!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=${gaId}'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${gaId}'); </script>`,
           }}
         />
         <Main />
@@ -23,29 +23,6 @@ const MyDocument = () => {
       </body>
     </Html>
   );
-};
-
-interface DocumentIncomingMessage extends IncomingMessage {
-  gaId?: string;
-  initialApiData: any;
-}
-
-interface IDocumentContext extends DocumentContext {
-  req?: DocumentIncomingMessage;
-}
-
-MyDocument.getInitialProps = async (ctx: IDocumentContext) => {
-  const initialProps = await Document.getInitialProps(ctx);
-
-  const {
-    req: { gaId, initialApiData },
-  } = ctx;
-
-  return {
-    ...initialProps,
-    initialApiData,
-    gaId: gaId ? gaId : 'UA-117582605-4',
-  };
 };
 
 export default MyDocument;
