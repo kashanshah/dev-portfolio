@@ -12,7 +12,6 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@next/bundle-analyzer": "^12.1.0",
     "@reduxjs/toolkit": "^1.8.0",
     "antd": "^4.18.7",
     "framer-motion": "^5",
@@ -20,13 +19,10 @@
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "^7.2.6",
-    "webpack": "^5.70.0"
+    "react-redux": "^7.2.6"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
     "prettier": "2.5.1",
     "typescript": "^4.6.2"
   }
