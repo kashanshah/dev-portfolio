@@ -31,3 +31,5 @@ yarn-error.log*
 
 # custom
 /.idea
+/dist
+.env
