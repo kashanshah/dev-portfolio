@@ -5,6 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '../src/redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 
 Router.events.on('routeChangeComplete', () => {
   // alert('complete');
@@ -15,15 +17,19 @@ Router.events.on('routeChangeStart', () => {
 
 const queryClient = new QueryClient();
 
+let persistor = persistStore(store);
+
 function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <ChakraProvider>
-          <div className='asdasd'>
-            <Component {...pageProps} />
-          </div>
-        </ChakraProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <ChakraProvider>
+            <div className='asdasd'>
+              <Component {...pageProps} />
+            </div>
+          </ChakraProvider>
+        </PersistGate>
       </Provider>
     </QueryClientProvider>
   );

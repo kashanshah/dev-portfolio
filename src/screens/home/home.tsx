@@ -9,7 +9,7 @@ import {
   LoadingOutlined,
 } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateBG, updateHelloCss } from '@redux/commonSlice';
+import { updateBG, updateHelloCss } from '@redux/common-slice';
 import constants from '../../helpers/constants.json';
 import { RootState } from '@redux/store';
 

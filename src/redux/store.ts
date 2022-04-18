@@ -1,10 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import commonSlice from '@redux/commonSlice';
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
+import { rootReducers } from '@redux/root-reducers';
 
 export const store = configureStore({
-  reducer: {
-    common: commonSlice,
-  },
+  reducer: rootReducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
