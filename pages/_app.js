@@ -4,6 +4,7 @@ import 'normalize.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '../src/redux/store';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 Router.events.on('routeChangeComplete', () => {
   // alert('complete');
@@ -12,15 +13,19 @@ Router.events.on('routeChangeStart', () => {
   // alert('start');
 });
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
-      <ChakraProvider>
-        <div className='asdasd'>
-          <Component {...pageProps} />
-        </div>
-      </ChakraProvider>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <ChakraProvider>
+          <div className='asdasd'>
+            <Component {...pageProps} />
+          </div>
+        </ChakraProvider>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 
