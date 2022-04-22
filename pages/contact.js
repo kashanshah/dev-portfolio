@@ -1,15 +1,12 @@
 import { Header } from '../src/layouts/header/header.tsx';
-import { HomeScreen } from '../src/screens/home/home.tsx';
 import constants from '../src/helpers/constants.json';
-import { useDispatch } from 'react-redux';
+import { ContactScreen } from '../src/screens/contact/contact';
 
-export default function Home() {
-  const dispatch = useDispatch();
-
+export default function Contact() {
   return (
     <div className='container'>
       <Header title={constants.fullName} />
-      <HomeScreen />
+      <ContactScreen />
     </div>
   );
 }

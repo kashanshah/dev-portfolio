@@ -1,50 +1,23 @@
-import { Box, Button, Flex, Heading, IconButton, Image, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, IconButton, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
-import {
-  FacebookFilled,
-  FileFilled,
-  GithubFilled,
-  InstagramFilled,
-  LinkedinFilled,
-  LoadingOutlined,
-} from '@ant-design/icons';
+import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateBG, updateHelloCss } from '@redux/common-slice';
-import constants from '../../helpers/constants.json';
+import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
+import Link from 'next/link';
+import { PageWrapper } from '../../layouts/two-columns';
+import { useGoToUrl } from '../../utils/url';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
-  const { helloCSS, homeBGImage } = useSelector((state: RootState) => state.common);
+  const goToUrl = useGoToUrl();
+  const { helloCSS } = useSelector((state: RootState) => state.common);
   return (
-    <Flex
-      alignItems='center'
-      justifyContent='space-between'
-      height={['auto', '100vh']}
-      flexDirection={['column-reverse', 'row']}
-      minW='100%'
-    >
-      <Flex minW={['100%', '50%']} alignItems='center' justifyContent='center'>
-        <Image
-          onClick={() => dispatch(updateBG())}
-          src={`/images/${homeBGImage}.jpeg`}
-          alt={constants.fullName}
-          height={['auto', '100vh']}
-          w='100%'
-          objectFit='cover'
-          fallback={<LoadingOutlined spin style={{ fontSize: 'xxx-large' }} />}
-        />
-      </Flex>
-      <Flex
-        minW={['100%', '50%']}
-        alignItems='center'
-        justifyContent='center'
-        h='100%'
-        flexDirection='column'
+    <PageWrapper>
+      <PageWrapper.ImageWall />
+      <PageWrapper.ContentWall
         onMouseEnter={() => dispatch(updateHelloCss('rotate(45deg) scale(2)'))}
         onMouseLeave={() => dispatch(updateHelloCss('rotate(0deg) scale(1)'))}
-        onClick={() => dispatch(updateBG())}
-        my={['32px', null]}
       >
         <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={helloCSS} mb='.25rem'>
           👋
@@ -56,41 +29,54 @@ export const HomeScreen = () => {
         <Stack isInline mb='3rem'>
           <Link _hover={{ textDecoration: 'none' }} target='_blank' href='mailto:kashanshah@hotmail.com'>
             <Tooltip hasArrow label='kashanshah@hotmail.com'>
-              <Button leftIcon={<EmailIcon />} variant='solid' colorScheme='blue'>
+              <Button leftIcon={<EmailIcon />} variant='solid' colorScheme='orange'>
                 Email Me
               </Button>
             </Tooltip>
           </Link>
           <Link _hover={{ textDecoration: 'none' }} target='_blank' href={'/docs/resume-syed-kashan-ali-shah.pdf'}>
-            <Button leftIcon={<FileFilled />} variant='solid' colorScheme='blue'>
+            <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
               View My Resume
             </Button>
           </Link>
         </Stack>
-        <Text mb='.25rem'>Connect me on</Text>
-        <Flex>
-          <Link isExternal href='https://fb.me/crickashan'>
-            <IconButton variant='link' colorScheme='facebook' fontSize='2xl' aria-label='facebook'>
-              <FacebookFilled />
-            </IconButton>
-          </Link>
-          <Link isExternal href='https://github.com/kashanshah'>
-            <IconButton variant='link' colorScheme='github' fontSize='2xl' aria-label='github'>
-              <GithubFilled />
-            </IconButton>
-          </Link>
-          <Link isExternal href='https://ae.linkedin.com/in/kashanshah'>
-            <IconButton variant='link' colorScheme='linkedin' fontSize='2xl' aria-label='linkedin'>
-              <LinkedinFilled />
-            </IconButton>
-          </Link>
-          <Link isExternal href='https://www.instagram.com/crickashan'>
-            <IconButton variant='link' colorScheme='orange' fontSize='2xl' aria-label='instagram'>
-              <InstagramFilled />
-            </IconButton>
-          </Link>
-        </Flex>
-      </Flex>
-    </Flex>
+        <Stack spacing='2' align='center'>
+          <Text>Connect me on</Text>
+          <Flex>
+            <Link isExternal href='https://fb.me/crickashan'>
+              <IconButton variant='link' colorScheme='facebook' fontSize='2xl' aria-label='facebook'>
+                <FacebookFilled />
+              </IconButton>
+            </Link>
+            <Link isExternal href='https://github.com/kashanshah'>
+              <IconButton variant='link' colorScheme='github' fontSize='2xl' aria-label='github'>
+                <GithubFilled />
+              </IconButton>
+            </Link>
+            <Link isExternal href='https://ae.linkedin.com/in/kashanshah'>
+              <IconButton variant='link' colorScheme='linkedin' fontSize='2xl' aria-label='linkedin'>
+                <LinkedinFilled />
+              </IconButton>
+            </Link>
+            <Link isExternal href='https://www.instagram.com/crickashan'>
+              <IconButton variant='link' colorScheme='orange' fontSize='2xl' aria-label='instagram'>
+                <InstagramFilled />
+              </IconButton>
+            </Link>
+          </Flex>
+          <Text blur='md'>Or</Text>
+          <Button
+            variant='outline'
+            colorScheme='orange'
+            onClick={(e) => {
+              e.preventDefault();
+              goToUrl({ path: '/contact' });
+            }}
+          >
+            Say me Hi
+          </Button>
+        </Stack>
+      </PageWrapper.ContentWall>
+    </PageWrapper>
   );
 };

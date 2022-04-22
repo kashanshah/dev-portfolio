@@ -1,4 +1,3 @@
-import Router from 'next/router';
 import 'antd/dist/antd.css';
 import 'normalize.css';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -7,13 +6,8 @@ import { store } from '../src/redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
-
-Router.events.on('routeChangeComplete', () => {
-  // alert('complete');
-});
-Router.events.on('routeChangeStart', () => {
-  // alert('start');
-});
+import { PageLoading } from '../src/screens/page-loading';
+import { AppWrapper } from '../src/components/app-wrapper';
 
 const queryClient = new QueryClient();
 
@@ -25,9 +19,10 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ChakraProvider>
-            <div className='asdasd'>
+            <AppWrapper>
               <Component {...pageProps} />
-            </div>
+              <PageLoading />
+            </AppWrapper>
           </ChakraProvider>
         </PersistGate>
       </Provider>

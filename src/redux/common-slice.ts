@@ -6,6 +6,7 @@ const commonSlice = createSlice({
   initialState: {
     helloCSS: 'rotate(0) scale(1)',
     homeBGImage: randomNumberBetween(1, 12),
+    isPageLoading: false,
   },
   reducers: {
     updateHelloCss: (state, action) => {
@@ -14,9 +15,12 @@ const commonSlice = createSlice({
     updateBG: (state) => {
       state.homeBGImage = randomNumberBetween(1, 12);
     },
+    updateIsPageLoading: (state, action) => {
+      state.isPageLoading = action.payload;
+    },
   },
 });
 
-export const { updateHelloCss, updateBG } = commonSlice.actions;
+export const { updateHelloCss, updateBG, updateIsPageLoading } = commonSlice.actions;
 
 export default commonSlice.reducer;
