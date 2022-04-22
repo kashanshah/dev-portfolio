@@ -1,10 +1,13 @@
+import React from 'react';
+import NextHead from 'next/head';
+
 type HeaderProps = {
   title?: string;
 };
 export const Header = (props: HeaderProps) => {
   return (
-    <head>
+    <NextHead>
       <title>{props.title}</title>
-    </head>
+    </NextHead>
   );
 };

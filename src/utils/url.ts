@@ -1,4 +1,4 @@
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { RouteParams } from 'next-routes';
 import { updateIsPageLoading } from '@redux/common-slice';
@@ -18,25 +18,15 @@ const autoScrollToTop =
 
 export const useGoToUrl = () => {
   const dispatch = useDispatch();
-  // else sdk side redirect
-  if (!Router.router) {
-    return;
-  }
+  const router = useRouter();
 
-  return async (props: goToUrlType) => {
+  return (url: string) => {
     dispatch(updateIsPageLoading(true));
-    const asd = await new Promise(() => {
-      setTimeout(() => {
-        const { path = '', params = {}, opt = {}, replace = false, disableAutoScroll = false } = props;
-        if (replace) {
-          Router.replace(path, params, opt).then(autoScrollToTop(disableAutoScroll));
-        } else {
-          Router.push(path, params, opt).then(autoScrollToTop(disableAutoScroll));
-        }
-      }, 500);
-      setTimeout(() => {
-        dispatch(updateIsPageLoading(false));
-      }, 1000);
-    });
+    setTimeout(() => {
+      router.push(url);
+    }, 500);
+    setTimeout(() => {
+      dispatch(updateIsPageLoading(false));
+    }, 700);
   };
 };

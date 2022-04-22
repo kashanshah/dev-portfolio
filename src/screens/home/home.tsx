@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
 import Link from 'next/link';
-import { PageWrapper } from '../../layouts/two-columns';
-import { useGoToUrl } from '../../utils/url';
+import { PageWrapper } from '@layouts/two-columns';
+import { useGoToUrl } from '@utils/url';
+import { useRouter } from 'next/router';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -70,7 +71,7 @@ export const HomeScreen = () => {
             colorScheme='orange'
             onClick={(e) => {
               e.preventDefault();
-              goToUrl({ path: '/contact' });
+              goToUrl('/contact');
             }}
           >
             Say me Hi

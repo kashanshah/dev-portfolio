@@ -31,8 +31,8 @@
       "@screens/*": ["src/screens/*"],
       "@redux/*": ["src/redux/*"],
       "@lib/*": ["src/lib/*"],
-      "@layout/*": ["src/layout/*"],
-      "@util/*": ["src/util/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/utils/*"],
       "@types/*": ["src/types/*"]
     },
     "incremental": true
