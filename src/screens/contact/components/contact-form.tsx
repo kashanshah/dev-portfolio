@@ -53,20 +53,19 @@ export const ContactForm = () => {
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     await axios
-      .post(`${process.env.NEXT_PUBLIC_API_BASE}/v1/emails/submit-contact-form`, data, {
+      .post(`${process.env.NEXT_PUBLIC_API_BASE}/submit-contact-form`, data, {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
       })
       .then((response) => {
-        console.log('here', response);
         successToast({
           title: 'Your message has been received',
           description: "I'll reach out to you soon.",
         });
       })
       .catch((e) => {
-        errorToast();
+        errorToast(e?.response?.data?.message);
       });
     setIsSubmitting(false);
   };
