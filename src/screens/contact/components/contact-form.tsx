@@ -16,8 +16,13 @@ import { Controller, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { IContactApiRequestBody } from '@screens/contact/components/types';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
+import { useState } from 'react';
+import { useToast } from '@hooks/use-toast';
 
 export const ContactForm = () => {
+  const { errorToast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const defaultValues: IContactApiRequestBody = {
     name: '',
     contact: '',
@@ -43,8 +48,24 @@ export const ContactForm = () => {
     bg: 'white',
   };
 
-  const onSubmit = (data: any) => {
-    console.log('data', data);
+  const onSubmit = async (data: any) => {
+    setIsSubmitting(true);
+    await axios
+      .post(`${process.env.NEXT_PUBLIC_API_BASE}/v1/emails/submit-contact-form`, data, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      })
+      .then((response) => {
+        console.log('here', response);
+      })
+      .catch((e) => {
+        errorToast({
+          title: 'An error occurred',
+          description: e?.response?.data?.message,
+        });
+      });
+    setIsSubmitting(false);
   };
 
   return (
@@ -101,7 +122,15 @@ export const ContactForm = () => {
           >
             Reset Form
           </Button>
-          <Button variant='solid' colorScheme='orange' aria-label='next' border={0} display='flex' type='submit'>
+          <Button
+            variant='solid'
+            colorScheme='orange'
+            aria-label='next'
+            border={0}
+            display='flex'
+            type='submit'
+            isLoading={isSubmitting}
+          >
             Send
           </Button>
         </ButtonGroup>

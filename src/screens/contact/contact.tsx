@@ -1,20 +1,9 @@
 import { Button, Heading, Stack } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { updateHelloCss, updateIsPageLoading } from '@redux/common-slice';
+import { updateHelloCss } from '@redux/common-slice';
 import { PageWrapper } from '../../layouts/two-columns';
 import { useGoToUrl } from '../../utils/url';
 import { ContactForm } from '@screens/contact/components/contact-form';
-import { useRouter } from 'next/router';
-
-const getTransformPercent = (step: number) => {
-  if (step === 0) {
-    return 0;
-  }
-  if (step === 1) {
-    return -100;
-  }
-  return -200;
-};
 
 export const ContactScreen = () => {
   const dispatch = useDispatch();
