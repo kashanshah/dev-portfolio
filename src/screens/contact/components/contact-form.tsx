@@ -37,11 +37,11 @@ export const ContactForm = () => {
     defaultValues,
     resolver: yupResolver(
       Yup.object().shape({
-        name: Yup.string().required('What should I call you?'),
+        name: Yup.string().required('What should I call you?').min(4, 'Is this your full name?'),
         contact: Yup.string()
           .required('Give me your contact for getting back to you')
           .min(5, 'Contact information seems incomplete'),
-        message: Yup.string().required('Say me anything...'),
+        message: Yup.string().required('Say me anything...').min(4, 'Say me anything...'),
       })
     ),
   });
