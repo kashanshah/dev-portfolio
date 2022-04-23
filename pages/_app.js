@@ -1,6 +1,6 @@
 import 'antd/dist/antd.css';
 import 'normalize.css';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '../src/redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -21,7 +21,9 @@ function MyApp({ Component, pageProps }) {
           <ChakraProvider>
             <AppWrapper>
               <Component {...pageProps} />
-              <PageLoading />
+              <Box maxW='100%' maxH='100%' overflow='hidden'>
+                <PageLoading />
+              </Box>
             </AppWrapper>
           </ChakraProvider>
         </PersistGate>

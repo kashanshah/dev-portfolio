@@ -11,16 +11,14 @@ export const PageLoading = (props: PageLoadingProps) => {
   return (
     <Box
       position='absolute'
-      top='50%'
-      left='50%'
+      top='0%'
+      left='0%'
       m='auto'
-      w='400vh'
-      h='400vh'
-      borderRadius='50%'
+      w='100%'
+      h='100%'
       bg='blue.500'
-      transform={`translate(-50%, -50%) scale(${isLoading ? '1' : '0'})`}
+      transform={`scaleX(${isLoading ? '1' : '0'})`}
       transition='.5s all ease'
-      transformOrigin='50% 50%'
       zIndex={100}
     >
       loading...

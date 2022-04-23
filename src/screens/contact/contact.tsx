@@ -1,4 +1,4 @@
-import { Button, Heading, Stack } from '@chakra-ui/react';
+import { Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { updateHelloCss } from '@redux/common-slice';
 import { PageWrapper } from '../../layouts/two-columns';
@@ -15,12 +15,17 @@ export const ContactScreen = () => {
         onMouseEnter={() => dispatch(updateHelloCss('rotate(45deg) scale(2)'))}
         onMouseLeave={() => dispatch(updateHelloCss('rotate(0deg) scale(1)'))}
       >
-        <Stack spacing='4' align='flex-end' w={['90vw', '25vw']}>
-          <Heading size='sm' alignSelf='flex-start'>
-            Say hi to me
-          </Heading>
+        <Stack spacing='4' w={['90vw', '25vw']}>
+          <Flex justifyContent='flex-start' alignItems='center'>
+            <Text as='span' fontSize='4xl'>
+              👋
+            </Text>
+            <Heading size='lg' ms='3'>
+              Say hi to me
+            </Heading>
+          </Flex>
           <ContactForm />
-          <Stack justifyContent='flex-end'>
+          <Stack justifyContent='flex-end' align='flex-end'>
             <Button
               variant='link'
               colorScheme='orange'

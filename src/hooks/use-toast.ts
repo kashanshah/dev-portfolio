@@ -23,8 +23,8 @@ const errorToast = (toast: ToastOptions) => (options: UseToastOptions) => {
 };
 
 export type UseToastProps = {
-  successToast: (options: UseToastOptions) => void;
-  errorToast: (options: UseToastOptions) => void;
+  successToast: (options?: UseToastOptions) => void;
+  errorToast: (options?: UseToastOptions) => void;
 };
 export const useToast = (): UseToastProps => {
   const toast = useChakraToast({});

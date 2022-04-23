@@ -21,7 +21,7 @@ import { useState } from 'react';
 import { useToast } from '@hooks/use-toast';
 
 export const ContactForm = () => {
-  const { errorToast } = useToast();
+  const { errorToast, successToast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const defaultValues: IContactApiRequestBody = {
     name: '',
@@ -38,7 +38,9 @@ export const ContactForm = () => {
     resolver: yupResolver(
       Yup.object().shape({
         name: Yup.string().required('What should I call you?'),
-        contact: Yup.string().email().required('Give me your contact for getting back to you'),
+        contact: Yup.string()
+          .required('Give me your contact for getting back to you')
+          .min(5, 'Contact information seems incomplete'),
         message: Yup.string().required('Say me anything...'),
       })
     ),
@@ -58,12 +60,13 @@ export const ContactForm = () => {
       })
       .then((response) => {
         console.log('here', response);
+        successToast({
+          title: 'Your message has been received',
+          description: "I'll reach out to you soon.",
+        });
       })
       .catch((e) => {
-        errorToast({
-          title: 'An error occurred',
-          description: e?.response?.data?.message,
-        });
+        errorToast();
       });
     setIsSubmitting(false);
   };
