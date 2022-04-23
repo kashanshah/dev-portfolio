@@ -1,13 +1,15 @@
-import { Box, BoxProps } from '@chakra-ui/react';
+import { BoxProps } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { updateIsPageLoading } from '@redux/common-slice';
 
 export const AppWrapper = (props: BoxProps) => {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-    dispatch(updateIsPageLoading(false));
+    setTimeout(() => {
+      dispatch(updateIsPageLoading(false));
+    }, 500);
   }, []);
 
   return <React.Fragment {...props} />;

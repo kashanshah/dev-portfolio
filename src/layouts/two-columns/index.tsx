@@ -1,7 +1,7 @@
 import { BoxProps, Flex, FlexProps, Image } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { updateBG } from '@redux/common-slice';
-import constants from '../../helpers/constants.json';
+import { updateBG, updateIsPageLoading } from '@redux/common-slice';
+import constants from '@helpers/constants.json';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
 
@@ -58,6 +58,14 @@ const ContentWall = (props: FlexProps) => {
 PageWrapper.ContentWall = ContentWall;
 
 export function PageWrapper(props: BoxProps) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(updateIsPageLoading(false));
+    }, 500);
+  }, []);
+
   return (
     <Flex
       alignItems='center'

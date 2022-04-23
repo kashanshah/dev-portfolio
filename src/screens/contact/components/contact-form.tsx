@@ -19,6 +19,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { useState } from 'react';
 import { useToast } from '@hooks/use-toast';
+import constants from '@helpers/constants.json';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
@@ -53,7 +54,7 @@ export const ContactForm = () => {
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     await axios
-      .post(`${process.env.NEXT_PUBLIC_API_BASE}/submit-contact-form`, data, {
+      .post(`${constants.apiBaseUrl}${constants.contactFormApi}`, data, {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },

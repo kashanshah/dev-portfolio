@@ -7,7 +7,6 @@ import { RootState } from '@redux/store';
 import Link from 'next/link';
 import { PageWrapper } from '@layouts/two-columns';
 import { useGoToUrl } from '@utils/url';
-import { useRouter } from 'next/router';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();

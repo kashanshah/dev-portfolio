@@ -33,6 +33,7 @@
       "@lib/*": ["src/lib/*"],
       "@layouts/*": ["src/layouts/*"],
       "@utils/*": ["src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@types/*": ["src/types/*"]
     },
     "incremental": true

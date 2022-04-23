@@ -1,3 +1,5 @@
 {
-  "fullName": "Syed Kashan Ali Shah"
+  "fullName": "Syed Kashan Ali Shah",
+  "apiBaseUrl": "https://msenterprises.pk/apis",
+  "contactFormApi": "/submit-contact-form"
 }
