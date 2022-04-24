@@ -71,6 +71,10 @@ export const StickyNote = (props: StickyNoteProps) => {
         fontSize='24px'
         color='grey.500'
         boxShadow='0 4px 5px rgba(0, 0, 0, 0.2)'
+        transition='.25s all'
+        _hover={{
+          transform: 'scale(1.1)',
+        }}
         _before={{
           display: 'block',
           content: '""',

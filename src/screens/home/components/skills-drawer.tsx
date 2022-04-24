@@ -34,10 +34,14 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
             m='auto'
             color='green'
             textDecoration='underline'
+            transform='rotate(0) !important'
+            _hover={{
+              transform: 'scale(1)',
+            }}
           />
         </DrawerHeader>
-        <DrawerBody background='url(/images/card-wall.jpeg)' pb='10'>
-          <Grid templateColumns='repeat(auto-fit, 250px)' justifyContent='center' alignItems='center' gap='10'>
+        <DrawerBody background='url(/images/card-wall.jpeg)' pb='5'>
+          <Grid templateColumns='repeat(auto-fit, 250px)' justifyContent='center' alignItems='center' gap='10' p='4'>
             <StickyNote text='React' rating={3} />
             <StickyNote text='NextJS' rating={2} />
             <StickyNote text='JavaScript' rating={3} />
