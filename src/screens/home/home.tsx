@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, IconButton, Stack, Text, Tooltip, Link } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, IconButton, Stack, Text, Link } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +6,9 @@ import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
 import { PageWrapper } from '@layouts/two-columns';
 import { useGoToUrl } from '@utils/url';
+import { Tooltip } from '@components/tooltip';
+import constants from '@helpers/constants.json';
+import { SocialLinks } from '@screens/home/components/social-links';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -26,8 +29,8 @@ export const HomeScreen = () => {
           Syed Kashan Ali Shah!
         </Heading>
         <Stack isInline mb='3rem'>
-          <Link _hover={{ textDecoration: 'none' }} isExternal href='mailto:kashanshah@hotmail.com'>
-            <Tooltip hasArrow label='kashanshah@hotmail.com'>
+          <Link _hover={{ textDecoration: 'none' }} isExternal href={`mailto:${constants.email}`}>
+            <Tooltip label={constants.email}>
               <Button leftIcon={<EmailIcon />} variant='solid' colorScheme='orange'>
                 Email Me
               </Button>
@@ -39,42 +42,7 @@ export const HomeScreen = () => {
             </Button>
           </Link>
         </Stack>
-        <Stack spacing='2' align='center'>
-          <Text>Connect me on</Text>
-          <Flex>
-            <Link isExternal href='https://fb.me/crickashan'>
-              <IconButton variant='link' colorScheme='facebook' fontSize='2xl' aria-label='facebook'>
-                <FacebookFilled />
-              </IconButton>
-            </Link>
-            <Link isExternal href='https://github.com/kashanshah'>
-              <IconButton variant='link' colorScheme='github' fontSize='2xl' aria-label='github'>
-                <GithubFilled />
-              </IconButton>
-            </Link>
-            <Link isExternal href='https://ae.linkedin.com/in/kashanshah'>
-              <IconButton variant='link' colorScheme='linkedin' fontSize='2xl' aria-label='linkedin'>
-                <LinkedinFilled />
-              </IconButton>
-            </Link>
-            <Link isExternal href='https://www.instagram.com/crickashan'>
-              <IconButton variant='link' colorScheme='orange' fontSize='2xl' aria-label='instagram'>
-                <InstagramFilled />
-              </IconButton>
-            </Link>
-          </Flex>
-          <Text blur='md'>Or</Text>
-          <Button
-            variant='outline'
-            colorScheme='orange'
-            onClick={(e) => {
-              e.preventDefault();
-              goToUrl('/contact');
-            }}
-          >
-            Say me Hi
-          </Button>
-        </Stack>
+        <SocialLinks />
       </PageWrapper.ContentWall>
     </PageWrapper>
   );

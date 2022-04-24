@@ -1,9 +1,11 @@
-import { Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Button, Flex, Heading, Link, Stack, Text } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { updateHelloCss } from '@redux/common-slice';
-import { PageWrapper } from '../../layouts/two-columns';
-import { useGoToUrl } from '../../utils/url';
+import { PageWrapper } from '@layouts/two-columns';
+import { useGoToUrl } from '@utils/url';
 import { ContactForm } from '@screens/contact/components/contact-form';
+import { Tooltip } from '@components/tooltip';
+import constants from '@helpers/constants.json';
 
 export const ContactScreen = () => {
   const dispatch = useDispatch();
@@ -35,6 +37,13 @@ export const ContactScreen = () => {
             >
               Go back to home page
             </Button>
+            <Link _hover={{ textDecoration: 'none' }} isExternal href={`mailto:${constants.email}`}>
+              <Tooltip label={constants.email}>
+                <Button variant='link' colorScheme='blue'>
+                  or you can email me as well
+                </Button>
+              </Tooltip>
+            </Link>
           </Stack>
         </Stack>
       </PageWrapper.ContentWall>
