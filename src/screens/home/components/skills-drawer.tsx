@@ -25,8 +25,15 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
     <Drawer placement='bottom' onClose={onClose} isOpen={isOpen} closeOnEsc {...rest}>
       <DrawerOverlay />
       <DrawerContent maxH='75vh'>
-        <DrawerCloseButton />
-        <DrawerHeader p='10' background='url(/images/card-wall.jpeg)' borderBottomWidth='1px' textAlign='center'>
+        <DrawerCloseButton zIndex={2} />
+        <DrawerHeader
+          p={['4', '10']}
+          background='url(/images/card-wall.jpeg)'
+          borderBottomWidth='1px'
+          textAlign='center'
+          zIndex={1}
+          boxShadow='0 5px 30px #3333335c'
+        >
           <StickyNote
             text='Skills Board'
             minHeight='90px'
@@ -40,7 +47,7 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
             }}
           />
         </DrawerHeader>
-        <DrawerBody background='url(/images/card-wall.jpeg)' pb='5'>
+        <DrawerBody background='url(/images/card-wall.jpeg)' pt='10' pb='5'>
           <Grid templateColumns='repeat(auto-fit, 250px)' justifyContent='center' alignItems='center' gap='10' p='4'>
             <StickyNote text='React' rating={3} />
             <StickyNote text='NextJS' rating={2} />

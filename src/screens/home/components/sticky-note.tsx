@@ -65,7 +65,7 @@ export const StickyNote = (props: StickyNoteProps) => {
         justifyContent='center'
         className={`note-wrap note-${getColor(rating)}`}
         minWidth='150px'
-        minHeight='150px'
+        minHeight={['100px', '150px']}
         padding='10px'
         position='relative'
         fontSize='24px'
