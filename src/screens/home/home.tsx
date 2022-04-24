@@ -1,19 +1,19 @@
-import { Box, Button, Flex, Heading, IconButton, Stack, Text, Link } from '@chakra-ui/react';
-import { EmailIcon } from '@chakra-ui/icons';
-import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
+import { Box, Button, Heading, Link, Stack } from '@chakra-ui/react';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
+import { FileFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
 import { PageWrapper } from '@layouts/two-columns';
-import { useGoToUrl } from '@utils/url';
-import { Tooltip } from '@components/tooltip';
-import constants from '@helpers/constants.json';
 import { SocialLinks } from '@screens/home/components/social-links';
+import { SkillsDrawer } from '@screens/home/components/skills-drawer';
+import { useState } from 'react';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
-  const goToUrl = useGoToUrl();
+  const [showSkills, setShowSkills] = useState(false);
   const { helloCSS } = useSelector((state: RootState) => state.common);
+
   return (
     <PageWrapper>
       <PageWrapper.ImageWall />
@@ -29,13 +29,15 @@ export const HomeScreen = () => {
           Syed Kashan Ali Shah!
         </Heading>
         <Stack isInline mb='3rem'>
-          <Link _hover={{ textDecoration: 'none' }} isExternal href={`mailto:${constants.email}`}>
-            <Tooltip label={constants.email}>
-              <Button leftIcon={<EmailIcon />} variant='solid' colorScheme='orange'>
-                Email Me
-              </Button>
-            </Tooltip>
-          </Link>
+          <Button
+            leftIcon={<InfoOutlineIcon />}
+            variant='solid'
+            colorScheme='orange'
+            onClick={() => setShowSkills(true)}
+          >
+            View My Skills
+            <SkillsDrawer isOpen={showSkills} onClose={() => setShowSkills(false)} />
+          </Button>
           <Link _hover={{ textDecoration: 'none' }} isExternal href='/docs/resume-syed-kashan-ali-shah.pdf'>
             <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
               View My Resume
