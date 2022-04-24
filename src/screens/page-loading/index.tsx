@@ -26,7 +26,7 @@ export const PageLoading = (props: PageLoadingProps) => {
       {...props}
     >
       <Heading as='span' color='white'>
-        loading...
+        ⏳ loading...
       </Heading>
     </Box>
   );
