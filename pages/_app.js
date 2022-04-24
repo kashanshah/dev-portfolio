@@ -4,10 +4,10 @@ import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '../src/redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import { PageLoading } from '../src/screens/page-loading';
 import { AppWrapper } from '../src/components/app-wrapper';
+import { ReduxPersistGate } from '../src/components/redux-persist-gate';
 
 const queryClient = new QueryClient();
 
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <ReduxPersistGate loading={null} persistor={persistor}>
           <ChakraProvider>
             <AppWrapper>
               <Component {...pageProps} />
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
               </Box>
             </AppWrapper>
           </ChakraProvider>
-        </PersistGate>
+        </ReduxPersistGate>
       </Provider>
     </QueryClientProvider>
   );

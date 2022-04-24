@@ -1,5 +1,6 @@
 {
   "fullName": "Syed Kashan Ali Shah",
   "apiBaseUrl": "https://msenterprises.pk/apis",
+  "isReduxPersistEnabled": false,
   "contactFormApi": "/submit-contact-form"
 }
