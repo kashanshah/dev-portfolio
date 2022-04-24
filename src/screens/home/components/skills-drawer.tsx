@@ -24,7 +24,7 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
   return (
     <Drawer placement='bottom' onClose={onClose} isOpen={isOpen} closeOnEsc {...rest}>
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent maxH='75vh'>
         <DrawerCloseButton />
         <DrawerHeader p='10' background='url(/images/card-wall.jpeg)' borderBottomWidth='1px' textAlign='center'>
           <StickyNote
