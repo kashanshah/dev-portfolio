@@ -1,10 +1,9 @@
-import { Box, Button, Flex, Heading, IconButton, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, IconButton, Stack, Text, Tooltip, Link } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FacebookFilled, FileFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
-import Link from 'next/link';
 import { PageWrapper } from '@layouts/two-columns';
 import { useGoToUrl } from '@utils/url';
 
@@ -27,14 +26,14 @@ export const HomeScreen = () => {
           Syed Kashan Ali Shah!
         </Heading>
         <Stack isInline mb='3rem'>
-          <Link _hover={{ textDecoration: 'none' }} target='_blank' href='mailto:kashanshah@hotmail.com'>
+          <Link _hover={{ textDecoration: 'none' }} isExternal href='mailto:kashanshah@hotmail.com'>
             <Tooltip hasArrow label='kashanshah@hotmail.com'>
               <Button leftIcon={<EmailIcon />} variant='solid' colorScheme='orange'>
                 Email Me
               </Button>
             </Tooltip>
           </Link>
-          <Link _hover={{ textDecoration: 'none' }} target='_blank' href={'/docs/resume-syed-kashan-ali-shah.pdf'}>
+          <Link _hover={{ textDecoration: 'none' }} isExternal href='/docs/resume-syed-kashan-ali-shah.pdf'>
             <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
               View My Resume
             </Button>
