@@ -55,7 +55,7 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
         pb: '5',
       }}
       contentProps={{
-        maxH: ['75vh', 'none'],
+        maxH: ['75vh', '90vh'],
       }}
       {...rest}
     >
