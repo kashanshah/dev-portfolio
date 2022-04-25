@@ -6,8 +6,9 @@ import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
 import { PageWrapper } from '@layouts/two-columns';
 import { SocialLinks } from '@screens/home/components/social-links';
-import { SkillsDrawer } from '@screens/home/components/skills-drawer';
+import { Index } from '@screens/home/components/skills-drawer';
 import { useState } from 'react';
+import { constants } from '@helpers/constants';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -29,15 +30,17 @@ export const HomeScreen = () => {
           Syed Kashan Ali Shah!
         </Heading>
         <Stack isInline mb='3rem'>
-          <Button
-            leftIcon={<InfoOutlineIcon />}
-            variant='solid'
-            colorScheme='orange'
-            onClick={() => setShowSkills(true)}
-          >
-            View My Skills
-            <SkillsDrawer isOpen={showSkills} onClose={() => setShowSkills(false)} />
-          </Button>
+          {constants.skills?.data?.length > 0 && (
+            <Button
+              leftIcon={<InfoOutlineIcon />}
+              variant='solid'
+              colorScheme='orange'
+              onClick={() => setShowSkills(true)}
+            >
+              View My Skills
+              <Index isOpen={showSkills} onClose={() => setShowSkills(false)} />
+            </Button>
+          )}
           <Link _hover={{ textDecoration: 'none' }} isExternal href='/docs/resume-syed-kashan-ali-shah.pdf'>
             <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
               View My Resume

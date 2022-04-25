@@ -3,5 +3,81 @@
   "email": "kashanshah@hotmail.com",
   "apiBaseUrl": "https://msenterprises.pk/apis",
   "isReduxPersistEnabled": false,
-  "contactFormApi": "/submit-contact-form"
+  "skills": {
+    "linkedInUrl": "https://www.linkedin.com/in/kashanshah/details/skills/",
+    "data": [
+      {
+        "name": "React",
+        "rating": 3
+      },
+      {
+        "name": "NextJS",
+        "rating": 2
+      },
+      {
+        "name": "JavaScript",
+        "rating": 3
+      },
+      {
+        "name": "TypeScript",
+        "rating": 2
+      },
+      {
+        "name": "HTML",
+        "rating": 3
+      },
+      {
+        "name": "CSS",
+        "rating": 3
+      },
+      {
+        "name": "NodeJS",
+        "rating": 1
+      },
+      {
+        "name": "MongoDB",
+        "rating": 1
+      },
+      {
+        "name": "SCSS",
+        "rating": 2
+      },
+      {
+        "name": "LESS",
+        "rating": 2
+      },
+      {
+        "name": "WordPress",
+        "rating": 3
+      },
+      {
+        "name": "BootstrapCSS",
+        "rating": 3
+      },
+      {
+        "name": "jQuery",
+        "rating": 3
+      },
+      {
+        "name": "Ajax",
+        "rating": 2
+      },
+      {
+        "name": "PHP",
+        "rating": 1
+      },
+      {
+        "name": "MySQL",
+        "rating": 2
+      },
+      {
+        "name": "Git",
+        "rating": 2
+      },
+      {
+        "name": "SVN",
+        "rating": 1
+      }
+    ]
+  }
 }
