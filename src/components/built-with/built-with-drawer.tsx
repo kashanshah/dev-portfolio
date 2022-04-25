@@ -9,7 +9,7 @@ export const BuiltWithDrawer = (props: BuiltWithDrawerProps) => {
 
   return (
     <Drawer isOpen={isOpen} onClose={onClose} placement='right' {...rest}>
-      <List spacing='4'>
+      <List spacing='4' mt='4'>
         <ListItem title='React' body='asdasdasdasd' />
         <ListItem title='Redux' />
         <ListItem title='Redux Toolkit' />

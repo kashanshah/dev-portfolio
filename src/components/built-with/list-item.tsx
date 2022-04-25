@@ -8,7 +8,7 @@ type ListItemProps = ChakraListItemProps & {
   body?: string | ReactElement;
 };
 export const ListItem = (props: ListItemProps) => {
-  const { title, body } = props;
+  const { title, body, ...rest } = props;
   const [showBody, setShowBody] = useState(false);
   const bodyRef = useRef<HTMLDivElement>(null);
   const toggleBody = () => {
@@ -19,11 +19,11 @@ export const ListItem = (props: ListItemProps) => {
   };
 
   return (
-    <ChakraListItem>
-      <Flex alignItems='center' justifyContent='space-between'>
-        <Flex alignItems='center' justifyContent='flex-start' onClick={toggleBody} cursor={body && 'pointer'}>
+    <ChakraListItem {...rest}>
+      <Flex alignItems='center' justifyContent='space-between' onClick={toggleBody} cursor={body && 'pointer'}>
+        <Flex alignItems='center' justifyContent='flex-start'>
           {showBody ? <ChevronDownIcon /> : <ChevronRightIcon />}
-          <Text>{title}</Text>
+          <Text fontWeight={700}>{title}</Text>
         </Flex>
         {body && (showBody ? <MinusOutlined /> : <PlusOutlined />)}
       </Flex>
@@ -34,6 +34,7 @@ export const ListItem = (props: ListItemProps) => {
           width='100%'
           transition='.25s all ease'
           overflow='hidden'
+          ms='4'
         >
           <Box ref={bodyRef}>{body}</Box>
         </Box>
