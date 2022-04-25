@@ -54,6 +54,9 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
         pt: '10',
         pb: '5',
       }}
+      contentProps={{
+        maxH: ['75vh', 'none'],
+      }}
       {...rest}
     >
       <Grid templateColumns='repeat(auto-fit, 250px)' justifyContent='center' alignItems='center' gap='10' p='4'>

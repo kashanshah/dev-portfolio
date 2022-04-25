@@ -25,7 +25,7 @@ export const Drawer = (props: DrawerProps) => {
   return (
     <ChakraDrawer placement='bottom' onClose={onClose} isOpen={isOpen} closeOnEsc {...rest}>
       <DrawerOverlay />
-      <DrawerContent maxH={['75vh', 'none']} {...contentProps}>
+      <DrawerContent {...contentProps}>
         <DrawerCloseButton zIndex={2} />
         {showHeader && <DrawerHeader {...headerProps}>{header}</DrawerHeader>}
         <DrawerBody {...bodyProps}>{children}</DrawerBody>
