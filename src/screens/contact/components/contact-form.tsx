@@ -19,7 +19,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { useState } from 'react';
 import { useToast } from '@hooks/use-toast';
-import constants from '@helpers/constants.json';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
@@ -51,10 +50,16 @@ export const ContactForm = () => {
     bg: 'white',
   };
 
+  const encode = (data: IContactApiRequestBody) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     await axios
-      .post(`${constants.apiBaseUrl}${constants.contactFormApi}`, data, {
+      .post(`/`, encode({ 'form-name': 'contact', ...data }), {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
@@ -66,7 +71,7 @@ export const ContactForm = () => {
         });
       })
       .catch((e) => {
-        errorToast(e?.response?.data?.message);
+        errorToast(e?.response);
       });
     setIsSubmitting(false);
   };
@@ -74,7 +79,7 @@ export const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <Stack w='100%' spacing='4'>
-        <FormControl isInvalid={!!errors?.name}>
+        <FormControl isInvalid={!!errors?.name} isReadOnly={isSubmitting}>
           <Controller
             name='name'
             control={control}
@@ -87,7 +92,7 @@ export const ContactForm = () => {
           />
           <FormErrorMessage>{errors?.name?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={!!errors?.contact}>
+        <FormControl isInvalid={!!errors?.contact} isReadOnly={isSubmitting}>
           <Controller
             name='contact'
             control={control}
@@ -100,7 +105,7 @@ export const ContactForm = () => {
           />
           <FormErrorMessage>{errors?.contact?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={!!errors?.message}>
+        <FormControl isInvalid={!!errors?.message} isReadOnly={isSubmitting}>
           <Controller
             name='message'
             control={control}
