@@ -71,9 +71,9 @@ export const ContactForm = () => {
         });
       })
       .catch((e) => {
-        errorToast(e?.response);
+        errorToast(e);
+        setIsSubmitting(false);
       });
-    setIsSubmitting(false);
   };
 
   return (
