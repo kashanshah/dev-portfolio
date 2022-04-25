@@ -1,6 +1,6 @@
-import { Header } from '../src/layouts/header/header.tsx';
-import { HomeScreen } from '../src/screens/home/home.tsx';
-import constants from '@helpers/constants.json';
+import { Header } from '@layouts/header/header.tsx';
+import { HomeScreen } from '@screens/home/home.tsx';
+import constants from '@helpers/constants';
 
 export default function Home() {
   return (

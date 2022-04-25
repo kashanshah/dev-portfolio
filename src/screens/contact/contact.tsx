@@ -5,7 +5,7 @@ import { PageWrapper } from '@layouts/two-columns';
 import { useGoToUrl } from '@utils/url';
 import { ContactForm } from '@screens/contact/components/contact-form';
 import { Tooltip } from '@components/tooltip';
-import constants from '@helpers/constants.json';
+import constants from '@helpers/constants';
 
 export const ContactScreen = () => {
   const dispatch = useDispatch();
