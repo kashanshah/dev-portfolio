@@ -8,6 +8,7 @@ import { persistStore } from 'redux-persist';
 import { PageLoading } from '../src/screens/page-loading';
 import { AppWrapper } from '../src/components/app-wrapper';
 import { ReduxPersistGate } from '../src/components/redux-persist-gate';
+import { BuiltWith } from '../src/components/built-with';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <Box maxW='100%' maxH='100%' overflow='hidden'>
                 <PageLoading />
+                <BuiltWith />
               </Box>
             </AppWrapper>
           </ChakraProvider>
