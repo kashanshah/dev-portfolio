@@ -3,6 +3,7 @@ import { FacebookFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@
 import { useGoToUrl } from '@utils/url';
 import { constants } from '@helpers/constants';
 import { IconMapper } from '@components/icon-mapper';
+import { Tooltip } from '@components/tooltip';
 
 export const SocialLinks = () => {
   const goToUrl = useGoToUrl();
@@ -30,20 +31,26 @@ export const SocialLinks = () => {
           );
         })}
       </Flex>
-      {!constants.isContactPageDisabled && (
-        <>
-          <Text blur='md'>Or</Text>
-          <Button
-            variant='outline'
-            colorScheme='orange'
-            onClick={(e) => {
-              e.preventDefault();
-              goToUrl('/contact');
-            }}
-          >
-            Say me Hi
-          </Button>
-        </>
+      <Text blur='md'>Or</Text>
+      {constants.isContactPageDisabled ? (
+        <Link _hover={{ textDecoration: 'none' }} isExternal href={`mailto:${constants.email}`}>
+          <Tooltip label={constants.email}>
+            <Button variant='link' colorScheme='blue'>
+              {constants?.homePage?.emailMeText || 'send me an email'}
+            </Button>
+          </Tooltip>
+        </Link>
+      ) : (
+        <Button
+          variant='outline'
+          colorScheme='orange'
+          onClick={(e) => {
+            e.preventDefault();
+            goToUrl('/contact');
+          }}
+        >
+          {constants?.homePage?.contactPageLinkText || 'Contact Me'}
+        </Button>
       )}
     </Stack>
   );

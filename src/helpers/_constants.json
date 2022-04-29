@@ -115,7 +115,9 @@
   "isContactPageDisabled": false,
   "homePage": {
     "preHeading": "Hi, I am",
-    "heading": "Syed Kashan Ali Shah!"
+    "heading": "Syed Kashan Ali Shah!",
+    "emailMeText": "you can email me as well",
+    "contactPageLinkText": "Say me hi"
   },
   "builtWith": {
     "triggerTooltip": "See what is used to build this...",

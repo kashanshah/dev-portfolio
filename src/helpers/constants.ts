@@ -29,6 +29,8 @@ export type ConstantsType = {
     preHeading?: string;
     heading?: string;
     postHeading?: string;
+    emailMeText?: string;
+    contactPageLinkText?: string;
   };
   builtWith?: {
     triggerTooltip?: string;
