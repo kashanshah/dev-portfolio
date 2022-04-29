@@ -10,7 +10,7 @@ const ImageWall = (props: FlexProps) => {
   const { homeBGImage } = useSelector((state: RootState) => state.common);
 
   useEffect(() => {
-    dispatch(updateBG());
+    // dispatch(updateBG());
   }, []);
 
   const commonProps = {

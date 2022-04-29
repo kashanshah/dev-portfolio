@@ -6,7 +6,7 @@ import { updateHelloCss } from '@redux/common-slice';
 import { RootState } from '@redux/store';
 import { PageWrapper } from '@layouts/two-columns';
 import { SocialLinks } from '@screens/home/components/social-links';
-import { Index } from '@screens/home/components/skills-drawer';
+import { SkillsDrawer } from '@screens/home/components/skills-drawer';
 import { useState } from 'react';
 import { constants } from '@helpers/constants';
 
@@ -25,10 +25,11 @@ export const HomeScreen = () => {
         <Box as='span' transition='1s all cubic-bezier(0, 0.59, 1, 1.33)' transform={helloCSS} mb='.25rem'>
           👋
         </Box>
-        <Heading size='md'>Hi, I am</Heading>
-        <Heading mb='1rem' color='blue.500'>
-          Syed Kashan Ali Shah!
-        </Heading>
+        <Stack alignItems='center' mb='1rem'>
+          {constants?.homePage?.preHeading && <Heading size='md'>{constants?.homePage.preHeading}</Heading>}
+          {constants?.homePage?.heading && <Heading color='blue.500'>{constants?.homePage?.heading}</Heading>}
+          {constants?.homePage?.postHeading && <Heading size='md'>{constants?.homePage.postHeading}</Heading>}
+        </Stack>
         <Stack isInline mb='3rem'>
           {constants.skills?.data?.length > 0 && (
             <Button
@@ -37,15 +38,17 @@ export const HomeScreen = () => {
               colorScheme='orange'
               onClick={() => setShowSkills(true)}
             >
-              View My Skills
-              <Index isOpen={showSkills} onClose={() => setShowSkills(false)} />
+              {constants?.skills?.buttonText || 'View My Skills'}
+              <SkillsDrawer isOpen={showSkills} onClose={() => setShowSkills(false)} />
             </Button>
           )}
-          <Link _hover={{ textDecoration: 'none' }} isExternal href='/docs/resume-syed-kashan-ali-shah.pdf'>
-            <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
-              View My Resume
-            </Button>
-          </Link>
+          {constants?.resume?.link && (
+            <Link _hover={{ textDecoration: 'none' }} isExternal href={constants?.resume?.link}>
+              <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
+                {constants?.resume?.linkText || 'View My Resume'}
+              </Button>
+            </Link>
+          )}
         </Stack>
         <SocialLinks />
       </PageWrapper.ContentWall>

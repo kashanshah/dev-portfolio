@@ -19,7 +19,8 @@ import {
   WindowsFilled,
   YoutubeFilled,
 } from '@ant-design/icons';
-import { AttachmentIcon, CheckCircleIcon, EmailIcon, LinkIcon } from '@chakra-ui/icons';
+import { AttachmentIcon, CheckCircleIcon, EmailIcon, InfoIcon, LinkIcon } from '@chakra-ui/icons';
+import React from 'react';
 
 type IconMapperProps = { icon: string };
 
@@ -64,6 +65,8 @@ export const IconMapper = ({ icon, ...rest }: IconMapperProps) => {
       return <DropboxCircleFilled {...rest} />;
     case 'slack':
       return <SlackSquareFilled {...rest} />;
+    case 'info':
+      return <InfoIcon {...rest} />;
     default:
       return <PlusSquareOutlined {...rest} />;
   }

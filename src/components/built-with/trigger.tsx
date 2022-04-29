@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { InfoIcon } from '@chakra-ui/icons';
 import { Tooltip } from '@components/tooltip';
+import { constants } from '@helpers/constants';
+import { IconMapper } from '@components/icon-mapper';
 
 type TriggerProps = {
   onClick: () => void;
@@ -11,8 +12,8 @@ export const Trigger = (props: TriggerProps) => {
 
   return (
     <Box onClick={onClick} position='fixed' right='15px' bottom='15px'>
-      <Tooltip label='See what has been used to build this'>
-        <InfoIcon fontSize='4xl' cursor='pointer' />
+      <Tooltip label={constants?.builtWith?.triggerTooltip}>
+        <IconMapper icon={constants?.builtWith?.triggerIcon} fontSize='4xl' cursor='pointer' />
       </Tooltip>
     </Box>
   );

@@ -1,9 +1,14 @@
 {
   "fullName": "Syed Kashan Ali Shah",
   "email": "kashanshah@hotmail.com",
+  "resume": {
+    "linkText": "View My Resume",
+    "link": "/docs/resume-syed-kashan-ali-shah.pdf"
+  },
   "apiBaseUrl": "https://msenterprises.pk/apis",
   "isReduxPersistEnabled": false,
   "skills": {
+    "buttonText": "View My Skills",
     "linkedInUrl": "https://www.linkedin.com/in/kashanshah/details/skills/",
     "data": [
       {
@@ -107,5 +112,56 @@
       "icon": "whatsapp"
     }
   },
-  "isContactPageDisabled": false
+  "isContactPageDisabled": false,
+  "homePage": {
+    "preHeading": "Hi, I am",
+    "heading": "Syed Kashan Ali Shah!"
+  },
+  "builtWith": {
+    "triggerTooltip": "See what is used to build this...",
+    "triggerIcon": "info",
+    "items": [
+      {
+        "title": "React",
+        "body": "adsasdaqwe mqj dkdajn jkcmsd"
+      },
+      {
+        "title": "Redux",
+        "body": "adsasdaqwe mqj dkdajn jkcmsd"
+      },
+      {
+        "title": "Redux Toolkit"
+      },
+      {
+        "title": "Axios"
+      },
+      {
+        "title": "next-routes"
+      },
+      {
+        "title": "normalize.css"
+      },
+      {
+        "title": "NextJS"
+      },
+      {
+        "title": "Chakra UI"
+      },
+      {
+        "title": "React Hook Form"
+      },
+      {
+        "title": "Yup"
+      },
+      {
+        "title": "React Query"
+      },
+      {
+        "title": "AntDesign Icons"
+      },
+      {
+        "title": "Netlify"
+      }
+    ]
+  }
 }

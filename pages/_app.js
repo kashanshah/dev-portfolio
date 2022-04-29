@@ -2,13 +2,14 @@ import 'antd/dist/antd.css';
 import 'normalize.css';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
-import { store } from '../src/redux/store';
+import { store } from '@redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { persistStore } from 'redux-persist';
-import { PageLoading } from '../src/screens/page-loading';
-import { AppWrapper } from '../src/components/app-wrapper';
-import { ReduxPersistGate } from '../src/components/redux-persist-gate';
+import { PageLoading } from '@screens/page-loading';
+import { AppWrapper } from '@components/app-wrapper';
+import { ReduxPersistGate } from '@components/redux-persist-gate';
 import { BuiltWith } from '../src/components/built-with';
+import { constants } from '@helpers/constants';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <Box maxW='100%' maxH='100%' overflow='hidden'>
                 <PageLoading />
-                <BuiltWith />
+                {constants?.builtWith && <BuiltWith />}
               </Box>
             </AppWrapper>
           </ChakraProvider>

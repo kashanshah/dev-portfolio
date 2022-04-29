@@ -5,7 +5,7 @@ import { Drawer } from '@components/drawer';
 import { constants } from '@helpers/constants';
 import { SkillsList } from '@screens/home/components/skills-drawer/skills-list';
 
-export const Index = (props: Omit<DrawerProps, 'children'>) => {
+export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
   const { onClose, isOpen, ...rest } = props;
   const skills = constants?.skills;
 
