@@ -5,7 +5,7 @@ import { constants } from '@helpers/constants';
 export default function Home() {
   return (
     <div className='container'>
-      <Header title={constants.fullName} />
+      <Header title={constants.title} />
       <HomeScreen />
     </div>
   );

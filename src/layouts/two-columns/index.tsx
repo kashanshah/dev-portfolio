@@ -25,7 +25,7 @@ const ImageWall = (props: FlexProps) => {
         <Image
           onClick={() => dispatch(updateBG())}
           src={`/images/${homeBGImage}.jpeg`}
-          alt={constants.fullName}
+          alt={constants.title}
           height={['auto', '100vh']}
           w='100%'
           objectFit='cover'

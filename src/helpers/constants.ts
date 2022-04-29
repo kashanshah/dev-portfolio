@@ -3,7 +3,7 @@ import { Property } from 'csstype';
 import ColorScheme = Property.ColorScheme;
 
 export type ConstantsType = {
-  fullName: string;
+  title: string;
   email: string;
   resume?: { linkText?: string; link: string };
   apiBaseUrl: string;

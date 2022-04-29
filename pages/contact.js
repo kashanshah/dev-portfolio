@@ -5,7 +5,7 @@ import { ContactScreen } from '@screens/contact/contact';
 export default function Contact() {
   return (
     <div className='container'>
-      <Header title={constants.fullName} />
+      <Header title={`Contact | ${constants.title}`} />
       <ContactScreen />
     </div>
   );
