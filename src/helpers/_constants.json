@@ -79,5 +79,33 @@
         "rating": 1
       }
     ]
-  }
+  },
+  "socialLinks": {
+    "facebook": {
+      "link": "https://fb.me/crickashan",
+      "colorScheme": "facebook",
+      "icon": "facebook"
+    },
+    "github": {
+      "link": "https://github.com/kashanshah",
+      "colorScheme": "github",
+      "icon": "github"
+    },
+    "linkedin": {
+      "link": "https://fb.me/crickashan",
+      "colorScheme": "linkedin",
+      "icon": "linkedin"
+    },
+    "instagram": {
+      "link": "https://github.com/kashanshah",
+      "colorScheme": "orange",
+      "icon": "instagram"
+    },
+    "whatsapp": {
+      "link": "https://wa.me/971567200094",
+      "colorScheme": "whatsapp",
+      "icon": "whatsapp"
+    }
+  },
+  "isContactPageDisabled": false
 }

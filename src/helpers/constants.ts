@@ -1,4 +1,6 @@
 import constantsJSON from './_constants.json';
+import { Property } from 'csstype';
+import ColorScheme = Property.ColorScheme;
 
 export type ConstantsType = {
   fullName: string;
@@ -13,8 +15,13 @@ export type ConstantsType = {
     }[];
   };
   socialLinks?: {
-    [T in string]: string;
+    [T in string]: {
+      link: string;
+      colorScheme?: ColorScheme;
+      icon?: string;
+    };
   };
+  isContactPageDisabled?: boolean;
 };
 
 export const constants: ConstantsType = constantsJSON;
