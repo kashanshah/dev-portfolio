@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Flex, Link, Stack, StackProps, Text } from '@chakra-ui/react';
-import { StarFilled, StarOutlined } from '@ant-design/icons';
+import { Stack, StackProps, Text } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
+import { useIsDarkMode } from '@hooks/use-is-dark-mood';
+import theme from '@utils/theme';
 
 type StickyNoteProps = StackProps & {
   text: string;
@@ -24,35 +25,44 @@ const getColor = (rating: number) => {
 
 export const StickyNote = (props: StickyNoteProps) => {
   const { text, color, rating } = props;
+  const isDarkMode = useIsDarkMode();
+
   return (
     <>
       <style jsx global>{`
         .note-yellow {
-          background: #f7e999;
+          background: ${theme.colors.yellow[isDarkMode ? '700' : '100']};
+          color: ${theme.colors.yellow[isDarkMode ? '100' : '700']};
           -webkit-transform: rotate(2deg);
           -moz-transform: rotate(2deg);
           -o-transform: rotate(2deg);
           -ms-transform: rotate(2deg);
           transform: rotate(2deg);
         }
+
         .note-blue {
-          background: #b9dcf4;
+          background: ${theme.colors.blue[isDarkMode ? '700' : '100']};
+          color: ${theme.colors.blue[isDarkMode ? '100' : '700']};
           -webkit-transform: rotate(-2deg);
           -moz-transform: rotate(-2deg);
           -o-transform: rotate(-2deg);
           -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
         }
+
         .note-pink {
-          background: #ffbda3;
+          background: ${theme.colors.pink[isDarkMode ? '700' : '100']};
+          color: ${theme.colors.pink[isDarkMode ? '100' : '700']};
           -webkit-transform: rotate(1deg);
           -moz-transform: rotate(1deg);
           -o-transform: rotate(1deg);
           -ms-transform: rotate(1deg);
           transform: rotate(1deg);
         }
+
         .note-green {
-          background: #caf4b9;
+          background: ${theme.colors.green[isDarkMode ? '700' : '100']};
+          color: ${theme.colors.green[isDarkMode ? '100' : '700']};
           -webkit-transform: rotate(-1deg);
           -moz-transform: rotate(-1deg);
           -o-transform: rotate(-1deg);

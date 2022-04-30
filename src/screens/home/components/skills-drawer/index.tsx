@@ -1,4 +1,4 @@
-import { Box, Button, DrawerProps, Grid, Link, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, DrawerProps, Grid, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
 import { StickyNote } from '@screens/home/components/sticky-note';
 import { LinkedinFilled } from '@ant-design/icons';
 import { Drawer } from '@components/drawer';
@@ -8,6 +8,7 @@ import { SkillsList } from '@screens/home/components/skills-drawer/skills-list';
 export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
   const { onClose, isOpen, ...rest } = props;
   const skills = constants?.skills;
+  const { colorMode } = useColorMode();
 
   return (
     <Drawer
@@ -20,7 +21,6 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
           minHeight='90px'
           width='250px'
           m='auto'
-          color='green'
           textDecoration='underline'
           transform='rotate(0) !important'
           _hover={{
@@ -30,19 +30,23 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
       }
       headerProps={{
         p: ['4', '10'],
-        background: 'url(/images/card-wall.jpeg)',
+        background: 'transparent',
         borderBottomWidth: '1px',
         textAlign: 'center',
         zIndex: 1,
         boxShadow: '0 5px 30px #3333335c',
+        border: 0,
       }}
       bodyProps={{
-        background: 'url(/images/card-wall.jpeg)',
+        background: 'transparent',
         pt: '10',
         pb: '5',
       }}
       contentProps={{
         maxH: ['75vh', '90vh'],
+        background: `url(/images/card-wall-${colorMode}.jpeg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
       }}
       {...rest}
     >

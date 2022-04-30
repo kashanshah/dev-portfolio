@@ -47,7 +47,7 @@ export const ContactForm = () => {
   });
 
   const inputGroupProps: InputGroupProps = {
-    bg: 'white',
+    // bg: 'white',
   };
 
   const encode = (data: IContactApiRequestBody) => {

@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '@redux/store';
@@ -9,6 +9,7 @@ import { AppWrapper } from '@components/app-wrapper';
 import { ReduxPersistGate } from '@components/redux-persist-gate';
 import { BuiltWith } from '../src/components/built-with';
 import { constants } from '@helpers/constants';
+import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <Box maxW='100%' maxH='100%' overflow='hidden'>
                 <PageLoading />
+                <ToggleDarkMode />
                 {constants?.builtWith && <BuiltWith />}
               </Box>
             </AppWrapper>

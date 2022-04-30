@@ -26,7 +26,11 @@ export const HomeScreen = () => {
           👋
         </Box>
         <Stack alignItems='center' mb='1rem'>
-          {constants?.homePage?.preHeading && <Heading size='md'>{constants?.homePage.preHeading}</Heading>}
+          {constants?.homePage?.preHeading && (
+            <Heading size='md' colorScheme='blue'>
+              {constants?.homePage.preHeading}
+            </Heading>
+          )}
           {constants?.homePage?.heading && <Heading color='blue.500'>{constants?.homePage?.heading}</Heading>}
           {constants?.homePage?.postHeading && <Heading size='md'>{constants?.homePage.postHeading}</Heading>}
         </Stack>
