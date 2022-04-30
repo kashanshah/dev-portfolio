@@ -1,7 +1,8 @@
 import constantsJSON from './_constants.json';
 import { Property } from 'csstype';
-import ColorScheme = Property.ColorScheme;
 import { IKeyValuePair } from '@utils/types';
+import { ConfigColorMode } from '@chakra-ui/color-mode/src/color-mode-provider';
+import ColorScheme = Property.ColorScheme;
 
 export type ConstantsType = {
   title: string;
@@ -13,7 +14,6 @@ export type ConstantsType = {
     robots?: string;
     language?: string;
     author?: string;
-    gtmId?: string;
   };
   resume?: { linkText?: string; link: string };
   apiBaseUrl: string;
@@ -48,6 +48,14 @@ export type ConstantsType = {
       title: string;
       body?: string;
     }[];
+  };
+  theme?: {
+    defaultTheme?: string;
+    useSystemColorMode?: boolean;
+  };
+  gtm?: {
+    id: string;
+    trackPageViews?: boolean;
   };
 };
 

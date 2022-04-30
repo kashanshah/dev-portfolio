@@ -7,8 +7,7 @@
     "keywords": "Web Developer, frontend engineer, software engineer, React JS, Next JS, Gatsby, HTL, CSS, Javascript, UI Developer, WordPress",
     "robots": "index, nofollow",
     "language": "English",
-    "author": "Kashan Shah",
-    "gtmId": "GTM-NK6PQB7"
+    "author": "Kashan Shah"
   },
   "resume": {
     "linkText": "View My Resume",
@@ -175,5 +174,13 @@
         "body": "Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps"
       }
     ]
+  },
+  "theme": {
+    "defaultTheme": "dark",
+    "useSystemColorMode": true
+  },
+  "gtm": {
+    "id": "GTM-NK6PQB7",
+    "trackPageViews": true
   }
 }

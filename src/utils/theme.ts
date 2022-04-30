@@ -1,10 +1,11 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
+import { constants } from '@helpers/constants';
 
 // 2. Add your color mode config
 const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: true,
+  initialColorMode: constants?.theme?.defaultTheme || 'light',
+  useSystemColorMode: constants?.theme?.useSystemColorMode || true,
   global: (props: any) => ({
     body: {
       color: mode('gray.800', 'whiteAlpha.900')(props),
