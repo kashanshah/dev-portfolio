@@ -1,5 +1,4 @@
 import 'antd/dist/antd.css';
-import 'normalize.css';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '@redux/store';
