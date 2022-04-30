@@ -124,29 +124,30 @@
     "items": [
       {
         "title": "React",
-        "body": "adsasdaqwe mqj dkdajn jkcmsd"
+        "body": "React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components."
       },
       {
         "title": "Redux",
-        "body": "adsasdaqwe mqj dkdajn jkcmsd"
+        "body": "React Redux is the official React binding for Redux. It allows React components to read data from a Redux Store, and dispatch Actions to the Store to update data. Redux helps apps to scale by providing a sensible way to manage state through a unidirectional data flow model. React Redux is conceptually simple."
       },
       {
-        "title": "Redux Toolkit"
+        "title": "Redux Toolkit",
+        "body": "The Redux Toolkit package is intended to have a standard way to write Redux logic. It was originally created to help address three common concerns about Redux: 1) Configuring a Redux store is too complicated, 2) I have to add a lot of packages to get Redux to do anything useful, 3) Redux requires too much boilerplate code\"\n"
       },
       {
-        "title": "Axios"
+        "title": "Axios",
+        "body": "Axios is a promise based HTTP client for the browser and Node. js. Axios makes it easy to send asynchronous HTTP requests to REST endpoints and perform CRUD operations. It can be used in plain JavaScript or with a library such as Vue or React"
+      },
+      {
+        "title": "NextJS",
+        "body": "Next. js is a JavaScript framework created by Zeit. It lets you build server-side rendering and static web applications using React. It's a great tool to build your next website. It has many great features and advantages, which can make Nextjs your first option for building your next web application"
+      },
+      {
+        "title": "Chakra UI",
+        "body": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications"
       },
       {
         "title": "next-routes"
-      },
-      {
-        "title": "normalize.css"
-      },
-      {
-        "title": "NextJS"
-      },
-      {
-        "title": "Chakra UI"
       },
       {
         "title": "React Hook Form"
@@ -161,7 +162,8 @@
         "title": "AntDesign Icons"
       },
       {
-        "title": "Netlify"
+        "title": "Netlify",
+        "body": "Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps"
       }
     ]
   }

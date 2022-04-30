@@ -10,14 +10,14 @@ export const ToggleDarkMode = (props: BoxProps) => {
   const isDarkModeEnabled = useIsDarkMode();
 
   return (
-    <Box position='fixed' right='15px' top='15px' onClick={toggleColorMode} {...props}>
+    <Box position='fixed' right='15px' top='15px' onClick={toggleColorMode} fontSize='1.9em' {...props}>
       <Tooltip label={`${isDarkModeEnabled ? 'Disabled' : 'Enable'} dark mode`}>
         <Flex
-          fontSize='30px'
           cursor='pointer'
-          width='45px'
-          height='45px'
+          width='1.5em'
+          height='1.5em'
           border='1px solid'
+          bg='gray.200'
           justifyContent='center'
           alignItems='center'
         >
