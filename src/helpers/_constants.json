@@ -1,6 +1,14 @@
 {
   "title": "Syed Kashan Ali Shah",
   "email": "kashanshah@hotmail.com",
+  "seo": {
+    "title": "Syed Kashan Ali Shah | Frontend Engineer",
+    "description": "I'm a frontend engineer, from Pakistan living in Dubai, with 6+ years experience working with React, NextJS, HTML, CSS, Javascript and also WordPress.",
+    "keywords": "Web Developer, frontend engineer, software engineer, React JS, Next JS, Gatsby, HTL, CSS, Javascript, UI Developer, WordPress",
+    "robots": "index, nofollow",
+    "language": "English",
+    "author": "Kashan Shah"
+  },
   "resume": {
     "linkText": "View My Resume",
     "link": "/docs/resume-syed-kashan-ali-shah.pdf"

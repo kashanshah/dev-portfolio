@@ -1,10 +1,19 @@
 import constantsJSON from './_constants.json';
 import { Property } from 'csstype';
 import ColorScheme = Property.ColorScheme;
+import { IKeyValuePair } from '@utils/types';
 
 export type ConstantsType = {
   title: string;
   email: string;
+  seo?: IKeyValuePair<string> & {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    robots?: string;
+    language?: string;
+    author?: string;
+  };
   resume?: { linkText?: string; link: string };
   apiBaseUrl: string;
   isReduxPersistEnabled: boolean;
