@@ -1,19 +1,15 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 import { Tooltip } from '@components/tooltip';
 import { constants } from '@helpers/constants';
 import { IconMapper } from '@components/icon-mapper';
+import { InfoIcon } from '@chakra-ui/icons';
 
-type TriggerProps = {
-  onClick: () => void;
-};
-export const Trigger = (props: TriggerProps) => {
-  const { onClick } = props;
-
+export const Trigger = (props: BoxProps) => {
   return (
-    <Box onClick={onClick} position='fixed' right='15px' bottom='15px'>
+    <Box position='fixed' right='15px' bottom='15px' {...props}>
       <Tooltip label={constants?.builtWith?.triggerTooltip}>
-        <IconMapper icon={constants?.builtWith?.triggerIcon} fontSize='4xl' cursor='pointer' />
+        <InfoIcon fontSize='4xl' cursor='pointer' />
       </Tooltip>
     </Box>
   );

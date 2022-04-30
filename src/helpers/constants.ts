@@ -34,7 +34,6 @@ export type ConstantsType = {
   };
   builtWith?: {
     triggerTooltip?: string;
-    triggerIcon?: string;
     items: {
       title: string;
       body?: string;

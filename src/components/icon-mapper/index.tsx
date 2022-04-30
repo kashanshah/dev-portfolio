@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   AndroidFilled,
   AppleFilled,
@@ -11,7 +12,6 @@ import {
   PhoneFilled,
   PlusSquareOutlined,
   SkypeFilled,
-  SlackOutlined,
   SlackSquareFilled,
   TwitterCircleFilled,
   WechatFilled,
@@ -19,8 +19,7 @@ import {
   WindowsFilled,
   YoutubeFilled,
 } from '@ant-design/icons';
-import { AttachmentIcon, CheckCircleIcon, EmailIcon, InfoIcon, LinkIcon } from '@chakra-ui/icons';
-import React from 'react';
+import { AttachmentIcon, EmailIcon, InfoIcon } from '@chakra-ui/icons';
 
 type IconMapperProps = { icon: string };
 

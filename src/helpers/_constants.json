@@ -121,7 +121,6 @@
   },
   "builtWith": {
     "triggerTooltip": "See what is used to build this...",
-    "triggerIcon": "info",
     "items": [
       {
         "title": "React",
