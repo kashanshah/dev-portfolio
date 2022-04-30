@@ -6,10 +6,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { persistStore } from 'redux-persist';
 import { PageLoading } from '@screens/page-loading';
 import { AppWrapper } from '@components/app-wrapper';
-import { ReduxPersistGate } from '@components/redux-persist-gate';
+import { ReduxPersistGate } from '../src/components/redux-persist-gate';
 import { BuiltWith } from '../src/components/built-with';
 import { constants } from '@helpers/constants';
 import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
+import { GoogleTagManager } from '../src/components/google-tag-manager';
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
               </Box>
             </AppWrapper>
           </ChakraProvider>
+          <GoogleTagManager gtmId={constants?.seo?.gtmId} />
         </ReduxPersistGate>
       </Provider>
     </QueryClientProvider>

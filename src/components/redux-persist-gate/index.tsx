@@ -3,7 +3,7 @@ import { PersistGate, PersistGateProps } from 'redux-persist/integration/react';
 import { constants } from '@helpers/constants';
 
 export const ReduxPersistGate = (props: PersistGateProps) => {
-  if (!constants.isReduxPersistEnabled) {
+  if (!constants?.isReduxPersistEnabled) {
     return <>{props.children}</>;
   }
 

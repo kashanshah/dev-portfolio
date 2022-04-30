@@ -13,6 +13,7 @@ export type ConstantsType = {
     robots?: string;
     language?: string;
     author?: string;
+    gtmId?: string;
   };
   resume?: { linkText?: string; link: string };
   apiBaseUrl: string;

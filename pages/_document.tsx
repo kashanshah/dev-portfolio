@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
 import theme from '@utils/theme';
+import { GoogleTagManager } from '@components/google-tag-manager';
+import { constants } from '@helpers/constants';
 
 export default class MyDocument extends Document {
   render() {
