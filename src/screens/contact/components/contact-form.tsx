@@ -17,13 +17,12 @@ import * as Yup from 'yup';
 import { IContactApiRequestBody } from '@screens/contact/components/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
-import { useState } from 'react';
 import { useToast } from '@hooks/use-toast';
 import { pushGAEvent } from '@utils/ga';
+import { useMutation } from 'react-query';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const defaultValues: IContactApiRequestBody = {
     name: '',
     contact: '',
@@ -51,38 +50,42 @@ export const ContactForm = () => {
     // bg: 'white',
   };
 
-  const encode = (data: IContactApiRequestBody) => {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
-  const onSubmit = async (data: any) => {
-    setIsSubmitting(true);
-    pushGAEvent('contact form submit', JSON.stringify(data), 'Form submission', 1);
-    await axios
-      .post(`/`, encode({ 'form-name': 'contact', ...data }), {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-      })
-      .then((response) => {
+  const { mutate, isLoading } = useMutation(
+    'contactFormSubmit',
+    (data: IContactApiRequestBody) => {
+      pushGAEvent('contact form submit', JSON.stringify(data), 'Form submission', 1);
+      return axios.post(
+        `/`,
+        { 'form-name': 'contact', ...data },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
+      );
+    },
+    {
+      onSuccess: () => {
+        reset(defaultValues);
         successToast({
           title: 'Your message has been received',
           description: "I'll reach out to you soon.",
         });
-        setIsSubmitting(false);
-      })
-      .catch((e) => {
-        errorToast(e);
-        setIsSubmitting(false);
-      });
+      },
+      onError: (error) => {
+        errorToast(error);
+      },
+    }
+  );
+
+  const onSubmit = async (data: any) => {
+    mutate(data);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <Stack w='100%' spacing='4'>
-        <FormControl isInvalid={!!errors?.name} isReadOnly={isSubmitting}>
+        <FormControl isInvalid={!!errors?.name} isReadOnly={isLoading}>
           <Controller
             name='name'
             control={control}
@@ -95,7 +98,7 @@ export const ContactForm = () => {
           />
           <FormErrorMessage>{errors?.name?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={!!errors?.contact} isReadOnly={isSubmitting}>
+        <FormControl isInvalid={!!errors?.contact} isReadOnly={isLoading}>
           <Controller
             name='contact'
             control={control}
@@ -108,7 +111,7 @@ export const ContactForm = () => {
           />
           <FormErrorMessage>{errors?.contact?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={!!errors?.message} isReadOnly={isSubmitting}>
+        <FormControl isInvalid={!!errors?.message} isReadOnly={isLoading}>
           <Controller
             name='message'
             control={control}
@@ -140,7 +143,7 @@ export const ContactForm = () => {
             border={0}
             display='flex'
             type='submit'
-            isLoading={isSubmitting}
+            isLoading={isLoading}
           >
             Send
           </Button>
