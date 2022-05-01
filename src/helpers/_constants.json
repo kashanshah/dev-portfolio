@@ -124,6 +124,7 @@
   "homePage": {
     "preHeading": "Hi, I am",
     "heading": "Syed Kashan Ali Shah!",
+    "introText": "<strong>Frontend</strong> Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB<br/> from <strong>Pakistan</strong> \uD83C\uDDF5\uD83C\uDDF0<br/> coding in <strong>Dubai</strong> \uD83C\uDDE6\uD83C\uDDEA",
     "emailMeText": "you can email me as well",
     "contactPageLinkText": "Say me hi"
   },

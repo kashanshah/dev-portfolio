@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Link, Stack } from '@chakra-ui/react';
+import { Box, Button, Heading, Link, Stack, Text } from '@chakra-ui/react';
 import { InfoOutlineIcon } from '@chakra-ui/icons';
 import { FileFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -33,6 +33,9 @@ export const HomeScreen = () => {
           )}
           {constants?.homePage?.heading && <Heading color='blue.500'>{constants?.homePage?.heading}</Heading>}
           {constants?.homePage?.postHeading && <Heading size='md'>{constants?.homePage.postHeading}</Heading>}
+          {constants?.homePage?.introText && (
+            <Text align='center' dangerouslySetInnerHTML={{ __html: constants?.homePage.introText }} />
+          )}
         </Stack>
         <Stack isInline mb='3rem'>
           {constants.skills?.data?.length > 0 && (

@@ -35,10 +35,10 @@ export type ConstantsType = {
   };
   isContactPageDisabled?: boolean;
   homePage: {
-    [T: string]: string;
     preHeading?: string;
     heading?: string;
     postHeading?: string;
+    introText?: string;
     emailMeText?: string;
     contactPageLinkText?: string;
   };
