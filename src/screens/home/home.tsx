@@ -9,6 +9,7 @@ import { SocialLinks } from '@screens/home/components/social-links';
 import { SkillsDrawer } from '@screens/home/components/skills-drawer';
 import { useState } from 'react';
 import { constants } from '@helpers/constants';
+import { pushGAEvent } from '@utils/ga';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,14 @@ export const HomeScreen = () => {
             </Button>
           )}
           {constants?.resume?.link && (
-            <Link _hover={{ textDecoration: 'none' }} isExternal href={constants?.resume?.link}>
+            <Link
+              _hover={{ textDecoration: 'none' }}
+              isExternal
+              href={constants?.resume?.link}
+              onClick={() => {
+                pushGAEvent('View My Resume button click', '', 'Resume Downloads', 1);
+              }}
+            >
               <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
                 {constants?.resume?.linkText || 'View My Resume'}
               </Button>

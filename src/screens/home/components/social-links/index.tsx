@@ -1,9 +1,9 @@
-import { Button, Flex, IconButton, Link, Stack, Text } from '@chakra-ui/react';
-import { FacebookFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
+import { Button, Flex, Link, Stack, Text } from '@chakra-ui/react';
 import { useGoToUrl } from '@utils/url';
 import { constants } from '@helpers/constants';
 import { IconMapper } from '@components/icon-mapper';
 import { Tooltip } from '@components/tooltip';
+import { pushGAEvent } from '@utils/ga';
 
 export const SocialLinks = () => {
   const goToUrl = useGoToUrl();
@@ -24,6 +24,9 @@ export const SocialLinks = () => {
               key={link + index}
               _hover={{
                 transform: 'scale(1.1)',
+              }}
+              onClick={() => {
+                pushGAEvent('click', constants.socialLinks[link].link, 'Social link click', 1);
               }}
             >
               <Button

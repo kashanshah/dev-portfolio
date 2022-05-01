@@ -4,14 +4,13 @@ import { Tooltip } from '@components/tooltip';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { useIsDarkMode } from '@hooks/use-is-dark-mood';
 import { pushGAEvent } from '@utils/ga';
-import { isDark, mode } from '@chakra-ui/theme-tools';
 
 export const ToggleDarkMode = (props: BoxProps) => {
   const { toggleColorMode, colorMode } = useColorMode();
   const isDarkModeEnabled = useIsDarkMode();
 
   const onClick = () => {
-    pushGAEvent('click', 'color mode: ' + (isDarkModeEnabled ? 'light' : 'dark'), 1, 'Color Mode');
+    pushGAEvent('Color Mode Switch', `${isDarkModeEnabled ? 'light' : 'dark'} mode`, 'Color Mode', 1);
     toggleColorMode();
   };
 

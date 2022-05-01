@@ -1,6 +1,6 @@
 import { constants } from '@helpers/constants';
 
-export const pushGAEvent = (action: string, label?: string, value?: number, category = 'general') => {
+export const pushGAEvent = (action: string, label?: string, category = 'general', value: number = 1) => {
   if (!window || !constants?.ga?.id) {
     return;
   }

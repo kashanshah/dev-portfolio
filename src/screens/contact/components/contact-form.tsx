@@ -59,7 +59,7 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
-    pushGAEvent('contact form submission', JSON.stringify(data), 1, 'formSubmit');
+    pushGAEvent('contact form submit', JSON.stringify(data), 'Form submission', 1);
     await axios
       .post(`/`, encode({ 'form-name': 'contact', ...data }), {
         headers: {
