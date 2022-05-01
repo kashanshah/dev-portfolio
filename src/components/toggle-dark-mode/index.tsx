@@ -11,7 +11,7 @@ export const ToggleDarkMode = (props: BoxProps) => {
   const isDarkModeEnabled = useIsDarkMode();
 
   const onClick = () => {
-    pushGAEvent('click', 'color mode: ' + isDarkModeEnabled ? 'dark' : 'light', 1, 'ColorMode');
+    pushGAEvent('click', 'color mode: ' + (isDarkModeEnabled ? 'light' : 'dark'), 1, 'Color Mode');
     toggleColorMode();
   };
 
