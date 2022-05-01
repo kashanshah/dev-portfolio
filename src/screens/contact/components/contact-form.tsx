@@ -19,6 +19,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { useState } from 'react';
 import { useToast } from '@hooks/use-toast';
+import { pushGAEvent } from '@utils/ga';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
@@ -58,6 +59,7 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
+    pushGAEvent('contact form submission', JSON.stringify(data), 1, 'formSubmit');
     await axios
       .post(`/`, encode({ 'form-name': 'contact', ...data }), {
         headers: {
@@ -69,6 +71,7 @@ export const ContactForm = () => {
           title: 'Your message has been received',
           description: "I'll reach out to you soon.",
         });
+        setIsSubmitting(false);
       })
       .catch((e) => {
         errorToast(e);

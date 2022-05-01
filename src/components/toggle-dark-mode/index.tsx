@@ -1,16 +1,22 @@
 import React from 'react';
 import { Box, BoxProps, Flex, useColorMode } from '@chakra-ui/react';
 import { Tooltip } from '@components/tooltip';
-import { InfoIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { useIsDarkMode } from '@hooks/use-is-dark-mood';
-import { mode } from '@chakra-ui/theme-tools';
+import { pushGAEvent } from '@utils/ga';
+import { isDark, mode } from '@chakra-ui/theme-tools';
 
 export const ToggleDarkMode = (props: BoxProps) => {
-  const { toggleColorMode } = useColorMode();
+  const { toggleColorMode, colorMode } = useColorMode();
   const isDarkModeEnabled = useIsDarkMode();
 
+  const onClick = () => {
+    pushGAEvent('click', 'color mode: ' + isDarkModeEnabled ? 'dark' : 'light', 1, 'ColorMode');
+    toggleColorMode();
+  };
+
   return (
-    <Box position='fixed' right='15px' top='15px' onClick={toggleColorMode} fontSize='1.9em' {...props}>
+    <Box position='fixed' right='15px' top='15px' onClick={onClick} fontSize='1.9em' {...props}>
       <Tooltip label={`${isDarkModeEnabled ? 'Disabled' : 'Enable'} dark mode`}>
         <Flex
           cursor='pointer'

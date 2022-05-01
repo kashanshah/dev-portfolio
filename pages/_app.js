@@ -11,7 +11,6 @@ import { BuiltWith } from '../src/components/built-with';
 import { constants } from '@helpers/constants';
 import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
 import { GoogleAnalytics } from '../src/components/google-analytics';
-import { TrackPageViews } from '../src/components/google-analytics/track-page-views';
 
 const queryClient = new QueryClient();
 
@@ -22,7 +21,6 @@ function MyApp({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <ReduxPersistGate loading={null} persistor={persistor}>
-          <TrackPageViews isEnabled={constants?.ga?.trackPageViews} />
           <ChakraProvider>
             <AppWrapper>
               <Component {...pageProps} />

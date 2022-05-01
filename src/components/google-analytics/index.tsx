@@ -2,6 +2,7 @@ import Script from 'next/script';
 import { constants } from '@helpers/constants';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { pushGAConfig } from '@utils/ga';
 
 export function GoogleAnalytics({ gaId }: { gaId: string }) {
   const router = useRouter();
@@ -12,11 +13,7 @@ export function GoogleAnalytics({ gaId }: { gaId: string }) {
     }
 
     const handleRouteChange = () => {
-      const url = window.location.pathname + window.location.search + window.location.hash;
-      // @ts-ignore
-      window.gtag?.('config', constants?.ga?.id, {
-        page_path: url,
-      });
+      pushGAConfig(constants?.ga?.id);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     router.events.on('hashChangeComplete', handleRouteChange);
