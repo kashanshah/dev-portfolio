@@ -34,7 +34,9 @@ export const HomeScreen = () => {
           {constants?.homePage?.heading && <Heading color='blue.500'>{constants?.homePage?.heading}</Heading>}
           {constants?.homePage?.postHeading && <Heading size='md'>{constants?.homePage.postHeading}</Heading>}
           {constants?.homePage?.introText && (
-            <Text align='center' dangerouslySetInnerHTML={{ __html: constants?.homePage.introText }} />
+            <Text align='center' whiteSpace='pre-wrap'>
+              {constants?.homePage.introText}
+            </Text>
           )}
         </Stack>
         <Stack isInline mb='3rem'>

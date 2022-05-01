@@ -18,7 +18,14 @@ export const SocialLinks = () => {
       <Flex>
         {Object.keys(constants.socialLinks).map((link, index) => {
           return (
-            <Link isExternal href={constants.socialLinks[link].link} key={link + index}>
+            <Link
+              isExternal
+              href={constants.socialLinks[link].link}
+              key={link + index}
+              _hover={{
+                transform: 'scale(1.1)',
+              }}
+            >
               <Button
                 variant='link'
                 colorScheme={constants.socialLinks[link].colorScheme}

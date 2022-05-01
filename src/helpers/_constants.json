@@ -124,7 +124,7 @@
   "homePage": {
     "preHeading": "Hi, I am",
     "heading": "Syed Kashan Ali Shah!",
-    "introText": "<strong>Frontend</strong> Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB<br/> from <strong>Pakistan</strong> \uD83C\uDDF5\uD83C\uDDF0<br/> coding in <strong>Dubai</strong> \uD83C\uDDE6\uD83C\uDDEA",
+    "introText": "Frontend Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB \n from Pakistan \uD83C\uDDF5\uD83C\uDDF0 \n coding in Dubai \uD83C\uDDE6\uD83C\uDDEA",
     "emailMeText": "you can email me as well",
     "contactPageLinkText": "Say me hi"
   },
@@ -156,6 +156,14 @@
         "body": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications"
       },
       {
+        "title": "Netlify",
+        "body": "Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps"
+      },
+      {
+        "title": "Google Analytics",
+        "body": "Google Analytics is a web analytics service that provides statistics and basic analytical tools for search engine optimization (SEO) and marketing purposes. The service is part of the Google Marketing Platform and is available for free to anyone with a Google account."
+      },
+      {
         "title": "next-routes"
       },
       {
@@ -169,10 +177,6 @@
       },
       {
         "title": "AntDesign Icons"
-      },
-      {
-        "title": "Netlify",
-        "body": "Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps"
       }
     ]
   },
