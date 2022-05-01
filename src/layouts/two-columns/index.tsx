@@ -21,7 +21,29 @@ const ImageWall = (props: FlexProps) => {
 
   if (!props.children) {
     return (
-      <Flex {...commonProps}>
+      <Flex overflow='hidden' {...commonProps}>
+        <style jsx global>{`
+          /* Copy this @keyframes block to your CSS*/
+          @keyframes kenBurns {
+            0.0% {
+              transform: scale(1);
+              transform-origin: 50% 50%;
+            }
+            50% {
+              transform: scale(1.3);
+              transform-origin: 50% 50%;
+            }
+            100% {
+              transform: scale(1);
+              transform-origin: 50% 50%;
+            }
+          }
+
+          /* Add the animation: property to whichever element you want to animate */
+          .bg-image {
+            animation: kenBurns 60s linear 0s infinite normal forwards;
+          }
+        `}</style>
         <Image
           onClick={() => dispatch(updateBG())}
           src={`/images/${homeBGImage}.jpeg`}
@@ -29,7 +51,7 @@ const ImageWall = (props: FlexProps) => {
           height={['auto', '100vh']}
           w='100%'
           objectFit='cover'
-          // ignoreFallback
+          className='bg-image'
           // fallback={<LoadingOutlined spin style={{ fontSize: 'xxx-large' }} />}
         />
       </Flex>
