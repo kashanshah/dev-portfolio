@@ -179,8 +179,8 @@
     "defaultTheme": "dark",
     "useSystemColorMode": true
   },
-  "gtm": {
-    "id": "GTM-NK6PQB7",
-    "trackPageViews": true
+  "ga": {
+    "id": "UA-117582605-4",
+    "trackHistory": true
   }
 }

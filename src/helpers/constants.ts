@@ -50,13 +50,13 @@ export type ConstantsType = {
     }[];
   };
   theme?: {
-    defaultTheme?: string;
+    defaultTheme?: ConfigColorMode;
     useSystemColorMode?: boolean;
   };
-  gtm?: {
+  ga?: {
     id: string;
-    trackPageViews?: boolean;
+    trackHistory?: boolean;
   };
 };
 
-export const constants: ConstantsType = constantsJSON;
+export const constants: ConstantsType = constantsJSON as ConstantsType;
