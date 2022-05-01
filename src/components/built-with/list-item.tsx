@@ -36,7 +36,9 @@ export const ListItem = (props: ListItemProps) => {
           overflow='hidden'
           ms='4'
         >
-          <Box ref={bodyRef}>{body}</Box>
+          <Box ref={bodyRef} whiteSpace='pre-wrap'>
+            {body}
+          </Box>
         </Box>
       )}
     </ChakraListItem>
