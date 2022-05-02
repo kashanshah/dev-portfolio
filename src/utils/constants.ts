@@ -109,12 +109,12 @@ export const constants: ConstantsType = {
       icon: 'github',
     },
     linkedin: {
-      link: 'https://fb.me/crickashan',
+      link: 'https://www.linkedin.com/in/kashanshah',
       colorScheme: 'linkedin',
       icon: 'linkedin',
     },
     instagram: {
-      link: 'https://github.com/kashanshah',
+      link: 'https://www.instagram.com/crickashan',
       colorScheme: 'orange',
       icon: 'instagram',
     },
