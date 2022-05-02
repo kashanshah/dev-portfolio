@@ -150,19 +150,19 @@ export const constants: ConstantsType = {
       },
       {
         title: 'Axios',
-        body: 'Axios is a promise based HTTP client for the browser and Node. js. Axios makes it easy to send asynchronous HTTP requests to REST endpoints and perform CRUD operations. It can be used in plain JavaScript or with a library such as Vue or React',
+        body: 'Axios is a promise based HTTP client for the browser and Node. js. Axios makes it easy to send asynchronous HTTP requests to REST endpoints and perform CRUD operations. It can be used in plain JavaScript or with a library such as Vue or React.\nhttps://axios-http.com',
       },
       {
         title: 'NextJS',
-        body: "Next. js is a JavaScript framework created by Zeit. It lets you build server-side rendering and static web applications using React. It's a great tool to build your next website. It has many great features and advantages, which can make Nextjs your first option for building your next web application",
+        body: "Next. js is a JavaScript framework created by Zeit. It lets you build server-side rendering and static web applications using React. It's a great tool to build your next website. It has many great features and advantages, which can make Nextjs your first option for building your next web application.\nhttps://nextjs.org/",
       },
       {
         title: 'Chakra UI',
-        body: 'Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications',
+        body: 'Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.\nhttps://chakra-ui.com/',
       },
       {
         title: 'Netlify',
-        body: 'Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps',
+        body: 'Netlify is a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, Netlify enables a 10x faster path to much more performant, secure, and scalable websites and apps.\nhttps://www.netlify.com/',
       },
       {
         title: 'Google Analytics',
@@ -179,7 +179,7 @@ export const constants: ConstantsType = {
       },
       {
         title: 'React Query',
-        body: 'React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze. \nIn this project, it is used in contact form submissions.',
+        body: 'React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze. \nIn this project, it is used in contact form submissions.\nhttps://react-query.tanstack.com/',
       },
       {
         title: 'AntDesign Icons',

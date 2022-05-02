@@ -83,9 +83,13 @@ Currently, the demo is deployed on <a href="https://netlify.com">Netlify</a>. Yo
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [ReactJs](http://reactjs.org//) - Library
-- [React Query](https://react-query.tanstack.com/) - Library
-- [Redux toolkit](https://redux-toolkit.js.org//) - Library
+- [ReactJs](http://reactjs.org/)
+- [Next JS](https://nextjs.org/)
+- [React Query](https://react-query.tanstack.com/)
+- [Redux toolkit](https://redux-toolkit.js.org//)
+- [Axiox](https://axios-http.com/)
+- [React Query](https://react-query.tanstack.com/)
+- [Chakra UI](https://chakra-ui.com/)
 
 ## ✍️ Authors <a name = "authors"></a>
 
