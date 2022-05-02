@@ -1,4 +1,4 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, Stack } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from '@redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -25,8 +25,10 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <Box maxW='100%' maxH='100%' overflow='hidden'>
                 <PageLoading />
-                <ToggleDarkMode />
-                {constants?.builtWith && <BuiltWith />}
+                <Stack isInline position='fixed' right='15px' top='15px' alignItems='center'>
+                  {constants?.builtWith && <BuiltWith />}
+                  <ToggleDarkMode />
+                </Stack>
               </Box>
             </AppWrapper>
           </ChakraProvider>
