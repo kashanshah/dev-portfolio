@@ -1,6 +1,7 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { ChakraTheme, extendTheme, Theme, ThemeConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import { constants } from '@utils/constants';
+import { Dict } from '@chakra-ui/utils';
 
 // 2. Add your color mode config
 const config: ThemeConfig = {
@@ -15,6 +16,6 @@ const config: ThemeConfig = {
 };
 
 // 3. extend the theme
-const theme = extendTheme({ config });
+const theme: Dict = extendTheme({ config });
 
 export default theme;

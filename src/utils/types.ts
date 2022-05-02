@@ -63,4 +63,7 @@ export type ConstantsType = {
     id: string;
     trackHistory?: boolean;
   };
+  recaptcha?: {
+    siteKey?: string;
+  };
 };

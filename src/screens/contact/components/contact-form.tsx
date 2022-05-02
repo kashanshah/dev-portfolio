@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import {
   Button,
   ButtonGroup,
@@ -20,10 +21,14 @@ import axios from 'axios';
 import { useToast } from '@hooks/use-toast';
 import { pushGAEvent } from '@utils/ga';
 import { useMutation } from 'react-query';
+import { GoogleRecaptcha } from '@components/google-recaptcha';
+import { constants } from '@utils/constants';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
-  const defaultValues: IContactApiRequestBody = {
+  const recaptchaRef = useRef(null);
+
+  const defaultValues: Omit<IContactApiRequestBody, 'recaptcha'> = {
     name: '',
     contact: '',
     message: '',
@@ -32,6 +37,8 @@ export const ContactForm = () => {
     handleSubmit,
     control,
     reset,
+    setValue,
+    trigger,
     formState: { errors },
   } = useForm<IContactApiRequestBody>({
     defaultValues,
@@ -42,6 +49,7 @@ export const ContactForm = () => {
           .required('Give me your contact for getting back to you')
           .min(5, 'Contact information seems incomplete'),
         message: Yup.string().required('Say me anything...').min(4, 'Say me anything...'),
+        recaptcha: Yup.string().required('Are you a human?').nullable(),
       })
     ),
   });
@@ -66,7 +74,7 @@ export const ContactForm = () => {
     },
     {
       onSuccess: () => {
-        reset(defaultValues);
+        resetForm();
         successToast({
           title: 'Your message has been received',
           description: "I'll reach out to you soon.",
@@ -80,6 +88,11 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: any) => {
     mutate(data);
+  };
+
+  const resetForm = () => {
+    reset(defaultValues);
+    recaptchaRef?.current?.reset();
   };
 
   return (
@@ -123,6 +136,20 @@ export const ContactForm = () => {
           />
           <FormErrorMessage>{errors?.message?.message}</FormErrorMessage>
         </FormControl>
+        <FormControl isInvalid={!!errors?.recaptcha} isReadOnly={isLoading}>
+          <GoogleRecaptcha
+            reference={recaptchaRef}
+            siteKey={constants?.recaptcha?.siteKey}
+            onChange={(value) => {
+              if (!value) {
+                recaptchaRef?.current?.reset();
+              }
+              setValue('recaptcha', value);
+              trigger('recaptcha');
+            }}
+          />
+          <FormErrorMessage>{errors?.recaptcha?.message}</FormErrorMessage>
+        </FormControl>
         <ButtonGroup justifyContent='flex-end'>
           <Button
             display='inline'
@@ -132,7 +159,7 @@ export const ContactForm = () => {
             _focus={{
               border: 0,
             }}
-            onClick={() => reset(defaultValues)}
+            onClick={resetForm}
           >
             Reset Form
           </Button>

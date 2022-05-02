@@ -194,4 +194,7 @@ export const constants: ConstantsType = {
     id: 'UA-117582605-4',
     trackHistory: true,
   },
+  recaptcha: {
+    siteKey: '6Lc5y6UUAAAAACUR5d2VH1AmN-hSXKxcO7Iemq9h',
+  },
 };

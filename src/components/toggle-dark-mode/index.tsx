@@ -6,7 +6,7 @@ import { useIsDarkMode } from '@hooks/use-is-dark-mood';
 import { pushGAEvent } from '@utils/ga';
 
 export const ToggleDarkMode = (props: BoxProps) => {
-  const { toggleColorMode, colorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
   const isDarkModeEnabled = useIsDarkMode();
 
   const onClick = () => {
@@ -15,7 +15,7 @@ export const ToggleDarkMode = (props: BoxProps) => {
   };
 
   return (
-    <Box position='fixed' right='15px' top='15px' onClick={onClick} fontSize='1.9em' {...props}>
+    <Box onClick={onClick} fontSize='1.9em' {...props}>
       <Tooltip label={`${isDarkModeEnabled ? 'Disabled' : 'Enable'} dark mode`}>
         <Flex
           cursor='pointer'

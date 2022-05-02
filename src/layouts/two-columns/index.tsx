@@ -30,7 +30,7 @@ const ImageWall = (props: FlexProps) => {
               transform-origin: 50% 50%;
             }
             50% {
-              transform: scale(1.3);
+              transform: scale(1.5);
               transform-origin: 50% 50%;
             }
             100% {
