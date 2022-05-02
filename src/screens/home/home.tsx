@@ -8,7 +8,7 @@ import { PageWrapper } from '@layouts/two-columns';
 import { SocialLinks } from '@screens/home/components/social-links';
 import { SkillsDrawer } from '@screens/home/components/skills-drawer';
 import { useState } from 'react';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { pushGAEvent } from '@utils/ga';
 
 export const HomeScreen = () => {

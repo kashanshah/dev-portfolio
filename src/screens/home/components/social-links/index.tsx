@@ -1,6 +1,6 @@
 import { Button, Flex, Link, Stack, Text } from '@chakra-ui/react';
 import { useGoToUrl } from '@utils/url';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { IconMapper } from '@components/icon-mapper';
 import { Tooltip } from '@components/tooltip';
 import { pushGAEvent } from '@utils/ga';

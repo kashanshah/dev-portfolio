@@ -1,6 +1,6 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 
 // 2. Add your color mode config
 const config: ThemeConfig = {

@@ -3,7 +3,7 @@ import { Trigger } from '@components/built-with/trigger';
 import { Drawer } from '@components/drawer';
 import { List, useDisclosure } from '@chakra-ui/react';
 import { ListItem } from '@components/built-with/list-item';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 
 export const BuiltWith = () => {
   const { onToggle, onClose, isOpen } = useDisclosure();

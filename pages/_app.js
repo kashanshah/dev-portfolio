@@ -7,7 +7,7 @@ import { PageLoading } from '@screens/page-loading';
 import { AppWrapper } from '@components/app-wrapper';
 import { ReduxPersistGate } from '../src/components/redux-persist-gate';
 import { BuiltWith } from '../src/components/built-with';
-import { constants } from '@helpers/constants';
+import { constants } from '../src/utils/constants';
 import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
 import { GoogleAnalytics } from '../src/components/google-analytics';
 

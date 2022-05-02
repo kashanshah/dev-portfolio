@@ -2,7 +2,7 @@ import { Box, Button, DrawerProps, Grid, Link, Stack, Text, useColorMode } from 
 import { StickyNote } from '@screens/home/components/sticky-note';
 import { LinkedinFilled } from '@ant-design/icons';
 import { Drawer } from '@components/drawer';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { SkillsList } from '@screens/home/components/skills-drawer/skills-list';
 
 export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {

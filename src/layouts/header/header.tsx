@@ -1,6 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
-import { constants, ConstantsType } from '@helpers/constants';
+import { constants } from '@utils/constants';
+import { ConstantsType } from '@utils/types';
 
 type HeaderProps = ConstantsType['seo'];
 

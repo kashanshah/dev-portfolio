@@ -1,7 +1,7 @@
 import { BoxProps, Flex, FlexProps, Image } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { updateBG, updateIsPageLoading } from '@redux/common-slice';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
 

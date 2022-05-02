@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { StickyNote } from '@screens/home/components/sticky-note';
-import { ConstantsType } from '@helpers/constants';
+import { ConstantsType } from '@utils/types';
 
 type SkillsListProps = {
   skills: ConstantsType['skills']['data'];

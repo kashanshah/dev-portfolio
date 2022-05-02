@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, BoxProps } from '@chakra-ui/react';
 import { Tooltip } from '@components/tooltip';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { IconMapper } from '@components/icon-mapper';
 import { InfoIcon } from '@chakra-ui/icons';
 

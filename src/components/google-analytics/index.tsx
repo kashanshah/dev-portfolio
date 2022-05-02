@@ -1,5 +1,5 @@
 import Script from 'next/script';
-import { constants } from '@helpers/constants';
+import { constants } from '@utils/constants';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { pushGAConfig } from '@utils/ga';

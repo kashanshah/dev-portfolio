@@ -1,5 +1,5 @@
 import { Header } from '../src/layouts/header/header.tsx';
-import { constants } from '../src/helpers/constants';
+import { constants } from '../src/utils/constants';
 import { ContactScreen } from '../src/screens/contact/contact';
 
 export default function Contact() {
