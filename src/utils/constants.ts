@@ -186,6 +186,13 @@ export const constants: ConstantsType = {
       },
     ],
   },
+  copyright: {
+    triggerTooltip: 'No Copyrights!',
+    content: {
+      title: 'no © copyrights',
+      body: 'This is an open-sourced project. Feel free to clone it from my github and use for your own. If you need any help, ping me :)',
+    },
+  },
   theme: {
     defaultTheme: 'dark',
     useSystemColorMode: true,

@@ -17,17 +17,28 @@ export type DrawerProps = ChakraDrawerProps & {
   headerProps?: ModalHeaderProps;
   bodyProps?: ModalBodyProps;
   contentProps?: DrawerContentProps;
-  showHeader?: boolean;
+  showCloseBtn?: boolean;
 };
 
 export const Drawer = (props: DrawerProps) => {
-  const { isOpen, onClose, header, children, headerProps, bodyProps, contentProps, showHeader = true, ...rest } = props;
+  const {
+    isOpen,
+    onClose,
+    header,
+    children,
+    headerProps,
+    bodyProps,
+    contentProps,
+    showCloseBtn = true,
+    ...rest
+  } = props;
+
   return (
     <ChakraDrawer placement='bottom' onClose={onClose} isOpen={isOpen} closeOnEsc {...rest}>
       <DrawerOverlay />
       <DrawerContent {...contentProps}>
-        <DrawerCloseButton zIndex={2} />
-        {showHeader && <DrawerHeader {...headerProps}>{header}</DrawerHeader>}
+        {showCloseBtn && <DrawerCloseButton zIndex={2} />}
+        {header && <DrawerHeader {...headerProps}>{header}</DrawerHeader>}
         <DrawerBody {...bodyProps}>{children}</DrawerBody>
       </DrawerContent>
     </ChakraDrawer>

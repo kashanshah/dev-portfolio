@@ -10,6 +10,7 @@ import { BuiltWith } from '../src/components/built-with';
 import { constants } from '../src/utils/constants';
 import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
 import { GoogleAnalytics } from '../src/components/google-analytics';
+import { Copyright } from '../src/components/copyright';
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
                 </Stack>
               </Box>
             </AppWrapper>
+            <Copyright position='fixed' right='15px' bottom='15px' alignItems='center' />
             <GoogleAnalytics gaId={constants?.ga?.id} />
           </ChakraProvider>
         </ReduxPersistGate>
