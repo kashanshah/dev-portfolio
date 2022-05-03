@@ -31,8 +31,8 @@ function MyApp({ Component, pageProps }) {
                 </Stack>
               </Box>
             </AppWrapper>
+            <GoogleAnalytics gaId={constants?.ga?.id} />
           </ChakraProvider>
-          <GoogleAnalytics gaId={constants?.ga?.id} />
         </ReduxPersistGate>
       </Provider>
     </QueryClientProvider>
