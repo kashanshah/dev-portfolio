@@ -6,9 +6,9 @@ import { InfoOutlineIcon } from '@chakra-ui/icons';
 
 export const Trigger = (props: BoxProps) => {
   return (
-    <Box {...props}>
+    <Box cursor='pointer' {...props}>
       <Tooltip label={constants?.builtWith?.triggerTooltip}>
-        <InfoOutlineIcon fontSize='4xl' cursor='pointer' />
+        <InfoOutlineIcon fontSize='4xl' />
       </Tooltip>
     </Box>
   );
