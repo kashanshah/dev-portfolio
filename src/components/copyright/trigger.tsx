@@ -1,16 +1,23 @@
 import React from 'react';
-import { Box, BoxProps } from '@chakra-ui/react';
-import { Tooltip } from '@components/tooltip';
-import { constants } from '@utils/constants';
-import { InfoOutlineIcon } from '@chakra-ui/icons';
+import { BoxProps, Flex, useColorModeValue } from '@chakra-ui/react';
 import { CopyrightCircleOutlined } from '@ant-design/icons';
 
 export const Trigger = (props: BoxProps) => {
+  const bg = useColorModeValue('white', ' black');
+
   return (
-    <Box {...props}>
-      <Tooltip label={constants?.copyright?.triggerTooltip}>
-        <CopyrightCircleOutlined />
-      </Tooltip>
-    </Box>
+    <Flex
+      border='1px solid'
+      borderColor='alphaWhite.100'
+      bg={bg}
+      width='30px'
+      height='30px'
+      justifyContent='center'
+      alignItems='center'
+      cursor='pointer'
+      {...props}
+    >
+      <CopyrightCircleOutlined />
+    </Flex>
   );
 };

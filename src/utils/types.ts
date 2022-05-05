@@ -56,11 +56,8 @@ export type ConstantsType = {
     }[];
   };
   copyright?: {
-    triggerTooltip?: string;
-    content?: {
-      title?: string;
-      body?: string;
-    };
+    title?: string;
+    body?: string;
   };
   theme?: {
     defaultTheme?: ConfigColorMode;

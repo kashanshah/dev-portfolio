@@ -16,7 +16,7 @@ export const CopyrightDrawer = (props: CopyrightDrawerProps) => {
 
   return (
     <Drawer isOpen={isOpen} onClose={onClose} placement='bottom' {...props}>
-      <Stack align='center'>
+      <Stack align='center' textAlign='center'>
         <Heading size='sm'>{title}</Heading>
         <Text>{body}</Text>
       </Stack>
