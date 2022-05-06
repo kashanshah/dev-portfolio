@@ -1,5 +1,5 @@
 import { Header } from '@layouts/header/header.tsx';
-import { HomeScreen } from '@screens/home/home.tsx';
+import { HomeScreen } from '@screens/home/';
 import { constants } from '../src/utils/constants';
 
 export default function Home() {

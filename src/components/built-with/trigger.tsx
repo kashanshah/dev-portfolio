@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, BoxProps } from '@chakra-ui/react';
-import { Tooltip } from '@components/tooltip';
+import { Tooltip } from '@components/tooltip/tooltip';
 import { constants } from '@utils/constants';
 import { InfoOutlineIcon } from '@chakra-ui/icons';
 

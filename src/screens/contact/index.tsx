@@ -4,7 +4,7 @@ import { updateHelloCss } from '@redux/common-slice';
 import { PageWrapper } from '@layouts/two-columns';
 import { useGoToUrl } from '@utils/url';
 import { ContactForm } from '@screens/contact/components/contact-form';
-import { Tooltip } from '@components/tooltip';
+import { Tooltip } from '@components/tooltip/tooltip';
 import { constants } from '@utils/constants';
 
 export const ContactScreen = () => {

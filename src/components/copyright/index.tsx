@@ -16,7 +16,7 @@ export const Copyright = (props: BoxProps) => {
 
   return (
     <Box {...props}>
-      <Trigger onClick={onToggle} hasDrawer={!!title || !!body} />
+      <Trigger onClick={onToggle} />
       <CopyrightDrawer isOpen={isOpen} onClose={onClose} title={title} body={body} />
     </Box>
   );

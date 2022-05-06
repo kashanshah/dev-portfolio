@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, BoxProps, Flex, useColorMode } from '@chakra-ui/react';
-import { Tooltip } from '@components/tooltip';
+import { Tooltip } from '@components/tooltip/tooltip';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { useIsDarkMode } from '@hooks/use-is-dark-mood';
 import { pushGAEvent } from '@utils/ga';
