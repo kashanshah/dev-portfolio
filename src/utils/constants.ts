@@ -188,7 +188,7 @@ export const constants: ConstantsType = {
   },
   copyright: {
     title: 'no © copyrights',
-    body: 'This is an open-sourced project. Feel free to clone it from my github and use for your own. If you need any help, ping me :)',
+    body: '# This is an open-sourced project. Feel free to clone it from my [github](https://github.com/kashanshah/dev-portfolio) and use for your own. If you need any help, ping me :)',
   },
   theme: {
     defaultTheme: 'dark',

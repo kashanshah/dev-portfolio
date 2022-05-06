@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heading, Stack, Text } from '@chakra-ui/react';
+import { Heading, Stack } from '@chakra-ui/react';
+import ReactMarkdown from 'react-markdown';
 import { Drawer, DrawerProps } from '@components/drawer';
 
 type CopyrightDrawerProps = Omit<DrawerProps, 'children'> & {
@@ -18,7 +19,7 @@ export const CopyrightDrawer = (props: CopyrightDrawerProps) => {
     <Drawer isOpen={isOpen} onClose={onClose} placement='bottom' {...props}>
       <Stack align='center' textAlign='center'>
         <Heading size='sm'>{title}</Heading>
-        <Text>{body}</Text>
+        <ReactMarkdown children={body} linkTarget='_blank' />
       </Stack>
     </Drawer>
   );

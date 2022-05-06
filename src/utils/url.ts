@@ -19,11 +19,12 @@ const autoScrollToTop =
 export const useGoToUrl = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const { locale } = router;
 
   return (url: string) => {
     dispatch(updateIsPageLoading(true));
     setTimeout(() => {
-      router.push(url);
+      router.push(url, url, { locale });
     }, 500);
   };
 };
