@@ -6,7 +6,7 @@ const commonSlice = createSlice({
   initialState: {
     helloCSS: 'rotate(0) scale(1)',
     homeBGImage: randomNumberBetween(1, 12),
-    isPageLoading: false,
+    isPageLoading: true,
   },
   reducers: {
     updateHelloCss: (state, action) => {

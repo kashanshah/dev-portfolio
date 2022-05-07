@@ -6,6 +6,7 @@ import { useGoToUrl } from '@utils/url';
 import { ContactForm } from '@screens/contact/components/contact-form';
 import { Tooltip } from '@components/tooltip/tooltip';
 import { constants } from '@utils/constants';
+import { trans } from '@utils/trans';
 
 export const ContactScreen = () => {
   const dispatch = useDispatch();
@@ -23,11 +24,13 @@ export const ContactScreen = () => {
               👋
             </Text>
             <Heading size='lg' ms='3'>
-              Say hi to me
+              {trans(constants?.contactForm?.heading)}
             </Heading>
           </Flex>
+
           <ContactForm />
-          <Stack justifyContent='flex-end' align='flex-end'>
+
+          <Stack justifyContent='flex-end' alignItems='flex-end'>
             <Button
               variant='link'
               colorScheme='orange'
@@ -35,12 +38,12 @@ export const ContactScreen = () => {
                 goToUrl('/');
               }}
             >
-              Go back to home page
+              {trans(constants?.contactForm?.homePageLinkText)}
             </Button>
             <Link _hover={{ textDecoration: 'none' }} isExternal href={`mailto:${constants.email}`}>
               <Tooltip label={constants.email}>
                 <Button variant='link' colorScheme='blue'>
-                  or you can email me as well
+                  {trans(constants?.contactForm?.emailLinkText)}
                 </Button>
               </Tooltip>
             </Link>

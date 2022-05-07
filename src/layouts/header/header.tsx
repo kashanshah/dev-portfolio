@@ -1,23 +1,24 @@
 import React from 'react';
 import NextHead from 'next/head';
 import { constants } from '@utils/constants';
-import { ConstantsType } from '@utils/types';
+import { IKeyValuePair } from '@utils/types';
+import { trans } from '@utils/trans';
 
-type HeaderProps = ConstantsType['seo'];
+type HeaderProps = IKeyValuePair<string>;
 
 export const Header = (props: HeaderProps) => {
   const { title, description, keywords, robots, language, author } = props;
 
   return (
     <NextHead>
-      <title>{title || constants?.seo?.title}</title>
-      <meta name='title' content={title || constants?.seo?.title} />
-      <meta name='description' content={description || constants?.seo?.description} />
-      <meta name='keywords' content={keywords || constants?.seo?.keywords} />
-      <meta name='robots' content={robots || constants?.seo?.robots} />
+      <title>{title || trans(constants?.seo?.title)}</title>
+      <meta name='title' content={title || trans(constants?.seo?.title)} />
+      <meta name='description' content={description || trans(constants?.seo?.description)} />
+      <meta name='keywords' content={keywords || trans(constants?.seo?.keywords)} />
+      <meta name='robots' content={robots || trans(constants?.seo?.robots)} />
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
-      <meta name='language' content={language || constants?.seo?.language} />
-      <meta name='author' content={author || constants?.seo?.author} />
+      <meta name='language' content={language || trans(constants?.seo?.language)} />
+      <meta name='author' content={author || trans(constants?.seo?.author)} />
     </NextHead>
   );
 };

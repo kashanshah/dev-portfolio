@@ -3,12 +3,13 @@ import { Trigger } from '@components/copyright/trigger';
 import { Box, BoxProps, useDisclosure } from '@chakra-ui/react';
 import { constants } from '@utils/constants';
 import { CopyrightDrawer } from '@components/copyright/copyright-drawer';
+import { trans } from '@utils/trans';
 
 export const Copyright = (props: BoxProps) => {
   const { onToggle, onClose, isOpen } = useDisclosure();
   const copyright = constants?.copyright;
-  const title = copyright?.title;
-  const body = copyright?.body;
+  const title = trans(copyright?.title);
+  const body = trans(copyright?.body);
 
   if (!Object.keys(copyright || {}).length) {
     return null;

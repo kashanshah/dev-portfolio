@@ -10,6 +10,7 @@ import { SkillsDrawer } from '@screens/home/components/skills-drawer';
 import { useState } from 'react';
 import { constants } from '@utils/constants';
 import { pushGAEvent } from '@utils/ga';
+import { trans } from '@utils/trans';
 
 export const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -29,14 +30,14 @@ export const HomeScreen = () => {
         <Stack alignItems='center' mb='1rem'>
           {constants?.homePage?.preHeading && (
             <Heading size='md' colorScheme='blue'>
-              {constants?.homePage.preHeading}
+              {trans(constants?.homePage.preHeading)}
             </Heading>
           )}
-          {constants?.homePage?.heading && <Heading color='blue.500'>{constants?.homePage?.heading}</Heading>}
-          {constants?.homePage?.postHeading && <Heading size='md'>{constants?.homePage.postHeading}</Heading>}
+          {constants?.homePage?.heading && <Heading color='blue.500'>{trans(constants?.homePage?.heading)}</Heading>}
+          {constants?.homePage?.postHeading && <Heading size='md'>{trans(constants?.homePage.postHeading)}</Heading>}
           {constants?.homePage?.introText && (
             <Text align='center' whiteSpace='pre-wrap'>
-              {constants?.homePage.introText}
+              {trans(constants?.homePage.introText)}
             </Text>
           )}
         </Stack>
@@ -48,7 +49,7 @@ export const HomeScreen = () => {
               colorScheme='orange'
               onClick={() => setShowSkills(true)}
             >
-              {constants?.skills?.buttonText || 'View My Skills'}
+              {trans(constants?.skills?.buttonText) || 'View My Skills'}
               <SkillsDrawer isOpen={showSkills} onClose={() => setShowSkills(false)} />
             </Button>
           )}
@@ -56,13 +57,13 @@ export const HomeScreen = () => {
             <Link
               _hover={{ textDecoration: 'none' }}
               isExternal
-              href={constants?.resume?.link}
+              href={trans(constants?.resume?.link)}
               onClick={() => {
                 pushGAEvent('View My Resume button click', '', 'Resume Downloads', 1);
               }}
             >
               <Button leftIcon={<FileFilled />} variant='outline' colorScheme='orange'>
-                {constants?.resume?.linkText || 'View My Resume'}
+                {trans(constants?.resume?.linkText) || 'View My Resume'}
               </Button>
             </Link>
           )}

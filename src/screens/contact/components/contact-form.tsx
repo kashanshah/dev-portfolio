@@ -7,12 +7,11 @@ import {
   Input,
   InputGroup,
   InputGroupProps,
-  InputLeftElement,
+  InputLeftAddon,
   Stack,
   Textarea,
 } from '@chakra-ui/react';
-import { UserOutlined } from '@ant-design/icons';
-import { EmailIcon } from '@chakra-ui/icons';
+import { RedEnvelopeOutlined, UserOutlined } from '@ant-design/icons';
 import { Controller, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { IContactApiRequestBody } from '@screens/contact/components/types';
@@ -23,10 +22,12 @@ import { pushGAEvent } from '@utils/ga';
 import { useMutation } from 'react-query';
 import { GoogleRecaptcha } from '@components/google-recaptcha';
 import { constants } from '@utils/constants';
+import { trans } from '@utils/trans';
 
 export const ContactForm = () => {
   const { errorToast, successToast } = useToast();
   const recaptchaRef = useRef(null);
+  const translations = constants?.stringTranslations;
 
   const defaultValues: Omit<IContactApiRequestBody, 'recaptcha'> = {
     name: '',
@@ -104,8 +105,8 @@ export const ContactForm = () => {
             control={control}
             render={({ field }) => (
               <InputGroup {...inputGroupProps}>
-                <InputLeftElement pointerEvents='none' color='gray.300' children={<UserOutlined />} />
-                <Input placeholder='Your name' {...field} />
+                <InputLeftAddon pointerEvents='none' children={<UserOutlined />} />
+                <Input placeholder={trans(translations['txt_your_name'])} {...field} />
               </InputGroup>
             )}
           />
@@ -117,8 +118,8 @@ export const ContactForm = () => {
             control={control}
             render={({ field }) => (
               <InputGroup {...inputGroupProps}>
-                <InputLeftElement pointerEvents='none' color='gray.300' children={<EmailIcon />} />
-                <Input placeholder='Your email or phone number' {...field} />
+                <InputLeftAddon pointerEvents='none' children={<RedEnvelopeOutlined />} />
+                <Input placeholder={trans(translations['txt_your_email'])} {...field} />
               </InputGroup>
             )}
           />
@@ -130,7 +131,7 @@ export const ContactForm = () => {
             control={control}
             render={({ field }) => (
               <InputGroup {...inputGroupProps}>
-                <Textarea placeholder='Your message' {...field} />
+                <Textarea placeholder={trans(translations['txt_your_message'])} {...field} />
               </InputGroup>
             )}
           />
@@ -153,7 +154,6 @@ export const ContactForm = () => {
         <ButtonGroup justifyContent='flex-end'>
           <Button
             display='inline'
-            textAlign='right'
             variant='link'
             colorScheme='blue'
             _focus={{
@@ -161,7 +161,7 @@ export const ContactForm = () => {
             }}
             onClick={resetForm}
           >
-            Reset Form
+            {trans(constants?.contactForm?.resetBtnText) || 'Reset Form'}
           </Button>
           <Button
             variant='solid'
@@ -172,7 +172,7 @@ export const ContactForm = () => {
             type='submit'
             isLoading={isLoading}
           >
-            Send
+            {trans(constants?.contactForm?.submitBtnText) || 'Send'}
           </Button>
         </ButtonGroup>
       </Stack>

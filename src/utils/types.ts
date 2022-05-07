@@ -10,54 +10,59 @@ export type IKeyValuePairAny = {
   [K: string]: any;
 };
 
+export type MultiLingualString = string | IKeyValuePair<string>;
+
 export type ConstantsType = {
-  title: string;
+  title: MultiLingualString;
   email: string;
-  seo?: IKeyValuePair<string> & {
-    title?: string;
-    description?: string;
-    keywords?: string;
+  seo?: IKeyValuePair<MultiLingualString> & {
+    title?: MultiLingualString;
+    description?: MultiLingualString;
+    keywords?: MultiLingualString;
     robots?: string;
-    language?: string;
-    author?: string;
+    language?: IKeyValuePair<MultiLingualString>;
+    author?: MultiLingualString;
   };
-  resume?: { linkText?: string; link: string };
-  apiBaseUrl: string;
+  resume?: { linkText?: MultiLingualString; link: MultiLingualString };
+  apiBaseUrl: MultiLingualString;
   isReduxPersistEnabled: boolean;
   skills?: {
-    buttonText?: string;
-    linkedInUrl: string;
+    buttonText?: MultiLingualString;
+    linkedInUrl: MultiLingualString;
     data: {
-      name: string;
+      name: MultiLingualString;
       rating?: number;
     }[];
   };
   socialLinks?: {
-    [T in string]: {
-      link: string;
-      colorScheme?: ColorScheme;
-      icon?: string;
+    label: MultiLingualString;
+    links: {
+      [T in string]: {
+        link: string;
+        colorScheme?: ColorScheme;
+        icon?: string;
+      };
     };
   };
   isContactPageDisabled?: boolean;
   homePage: {
-    preHeading?: string;
-    heading?: string;
-    postHeading?: string;
-    introText?: string;
-    emailMeText?: string;
-    contactPageLinkText?: string;
+    preHeading?: MultiLingualString;
+    heading?: MultiLingualString;
+    postHeading?: MultiLingualString;
+    introText?: MultiLingualString;
+    emailMeText?: MultiLingualString;
+    contactPageLinkText?: MultiLingualString;
   };
   builtWith?: {
-    triggerTooltip?: string;
+    triggerTooltip?: MultiLingualString;
     items: {
-      title: string;
-      body?: string;
+      title: MultiLingualString;
+      body?: MultiLingualString;
     }[];
   };
   copyright?: {
-    title?: string;
-    body?: string;
+    title?: MultiLingualString;
+    body?: MultiLingualString;
   };
   theme?: {
     defaultTheme?: ConfigColorMode;
@@ -70,4 +75,15 @@ export type ConstantsType = {
   recaptcha?: {
     siteKey?: string;
   };
+  contactForm?: {
+    heading?: MultiLingualString;
+    homePageLinkText?: MultiLingualString;
+    emailLinkText?: MultiLingualString;
+    submitBtnText?: MultiLingualString;
+    resetBtnText?: MultiLingualString;
+  };
+  languageSwitcher: {
+    title: MultiLingualString;
+  };
+  stringTranslations: IKeyValuePair<MultiLingualString>;
 };

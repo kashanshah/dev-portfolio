@@ -11,12 +11,16 @@ import { constants } from '../src/utils/constants';
 import { ToggleDarkMode } from '../src/components/toggle-dark-mode';
 import { GoogleAnalytics } from '../src/components/google-analytics';
 import { Copyright } from '../src/components/copyright';
+import { LanguageSwitcher } from '../src/components/language-switcher';
+import { useIsRTL } from '../src/utils/trans';
 
 const queryClient = new QueryClient();
 
 let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {
+  const isRTL = useIsRTL();
+
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
@@ -26,9 +30,17 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <Box maxW='100%' maxH='100%' overflow='hidden'>
                 <PageLoading />
-                <Stack isInline position='fixed' right='15px' top='15px' alignItems='center'>
+                <Stack
+                  isInline
+                  position='fixed'
+                  right={!isRTL && '15px'}
+                  left={isRTL && '15px'}
+                  top='15px'
+                  alignItems='center'
+                >
                   {constants?.builtWith && <BuiltWith />}
                   <ToggleDarkMode />
+                  <LanguageSwitcher />
                 </Stack>
               </Box>
             </AppWrapper>

@@ -1,6 +1,8 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
+import { constants } from '@utils/constants';
+import { trans } from '@utils/trans';
 
 type PageLoadingProps = {
   isLoading: boolean;
@@ -26,7 +28,7 @@ export const PageLoading = (props: PageLoadingProps) => {
       {...props}
     >
       <Heading as='span' color='white'>
-        ⏳ loading...
+        ⏳ {trans(constants?.stringTranslations['txt_loading'])}...
       </Heading>
     </Box>
   );

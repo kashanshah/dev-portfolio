@@ -4,6 +4,7 @@ import { LinkedinFilled } from '@ant-design/icons';
 import { Drawer } from '@components/drawer';
 import { constants } from '@utils/constants';
 import { SkillsList } from '@screens/home/components/skills-drawer/skills-list';
+import { trans } from '@utils/trans';
 
 export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
   const { onClose, isOpen, ...rest } = props;
@@ -55,7 +56,7 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
       </Grid>
       {skills?.data?.length && (
         <Box textAlign='center' mt='10'>
-          <Link _hover={{ textDecoration: 'none' }} isExternal href={skills.linkedInUrl}>
+          <Link _hover={{ textDecoration: 'none' }} isExternal href={trans(skills.linkedInUrl)}>
             <Button variant='outline' colorScheme='orange'>
               <Stack alignItems='center' isInline spacing='3'>
                 <LinkedinFilled />
