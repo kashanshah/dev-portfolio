@@ -4,6 +4,7 @@ import { updateBG, updateIsPageLoading } from '@redux/common-slice';
 import { constants } from '@utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
+import { trans } from '@utils/trans';
 
 const ImageWall = (props: FlexProps) => {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ const ImageWall = (props: FlexProps) => {
         <Image
           onClick={() => dispatch(updateBG())}
           src={`/images/${homeBGImage}.jpeg`}
-          alt={constants.title}
+          alt={trans(constants.title)}
           height={['auto', '100vh']}
           w='100%'
           objectFit='cover'

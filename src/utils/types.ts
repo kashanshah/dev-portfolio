@@ -20,9 +20,9 @@ export type ConstantsType = {
     description?: MultiLingualString;
     keywords?: MultiLingualString;
     robots?: string;
-    language?: IKeyValuePair<MultiLingualString>;
     author?: MultiLingualString;
   };
+  languages?: IKeyValuePair<MultiLingualString>;
   resume?: { linkText?: MultiLingualString; link: MultiLingualString };
   apiBaseUrl: MultiLingualString;
   isReduxPersistEnabled: boolean;

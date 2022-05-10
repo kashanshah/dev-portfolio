@@ -7,7 +7,7 @@ import { trans } from '@utils/trans';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 
 export const LanguageSwitcher = (props: BoxProps) => {
-  const languages = Object.entries(constants?.seo?.language);
+  const languages = Object.entries(constants?.languages);
   const router = useRouter();
   const { pathname, locale } = router;
 

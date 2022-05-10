@@ -16,11 +16,11 @@ export const constants: ConstantsType = {
       en: 'Web Developer, frontend engineer, software engineer, React JS, Next JS, Gatsby, HTL, CSS, Javascript, UI Developer, WordPress',
     },
     robots: 'index, nofollow',
-    language: {
-      en: { en: 'English', ur: 'انگریزی' },
-      ur: { en: 'Urdu', ur: 'اردو' },
-    },
     author: 'Kashan Shah',
+  },
+  languages: {
+    en: { en: 'English', ur: 'انگریزی' },
+    ur: { en: 'Urdu', ur: 'اردو' },
   },
   resume: {
     linkText: {
