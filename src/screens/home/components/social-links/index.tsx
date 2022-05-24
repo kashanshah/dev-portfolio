@@ -22,7 +22,8 @@ export const SocialLinks = () => {
           return (
             <Link
               isExternal
-              href={constants?.socialLinks?.[link]?.link}
+              href={socialLink.link}
+              target='_blank'
               key={link + index}
               _hover={{
                 transform: 'scale(1.1)',
