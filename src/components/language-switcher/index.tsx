@@ -36,9 +36,10 @@ export const LanguageSwitcher = (props: BoxProps) => {
           </Flex>
         </Box>
         <MenuList aria-haspopup={'true'} minWidth='150px' p={0}>
-          {languages.map(([key, value]) => {
+          {languages.map(([key, value], index) => {
             return (
               <MenuItem
+                key-={`${value}-${index}`}
                 onClick={() => {
                   window.location.href = `/${key + pathname}`;
                 }}

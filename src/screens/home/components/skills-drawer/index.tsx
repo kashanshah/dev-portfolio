@@ -45,6 +45,7 @@ export const SkillsDrawer = (props: Omit<DrawerProps, 'children'>) => {
       }}
       contentProps={{
         maxH: ['75vh', '90vh'],
+        backgroundColor: `blackAlpha.800`,
         background: `url(/images/card-wall-${colorMode}.jpeg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
