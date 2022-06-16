@@ -1,16 +1,5 @@
 import React, { useRef } from 'react';
-import {
-  Button,
-  ButtonGroup,
-  FormControl,
-  FormErrorMessage,
-  Input,
-  InputGroup,
-  InputGroupProps,
-  InputLeftAddon,
-  Stack,
-  Textarea,
-} from '@chakra-ui/react';
+import { Button, ButtonGroup, FormControl, FormErrorMessage, Input, InputGroup, InputGroupProps, InputLeftAddon, Stack, Textarea } from '@chakra-ui/react';
 import { RedEnvelopeOutlined, UserOutlined } from '@ant-design/icons';
 import { Controller, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -18,7 +7,6 @@ import { IContactApiRequestBody } from '@screens/contact/components/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { useToast } from '@hooks/use-toast';
-import { pushGAEvent } from '@utils/ga';
 import { useMutation } from 'react-query';
 import { GoogleRecaptcha } from '@components/google-recaptcha';
 import { constants } from '@utils/constants';
@@ -32,7 +20,7 @@ export const ContactForm = () => {
   const defaultValues: Omit<IContactApiRequestBody, 'recaptcha'> = {
     name: '',
     contact: '',
-    message: '',
+    message: ''
   };
   const {
     handleSubmit,
@@ -40,7 +28,7 @@ export const ContactForm = () => {
     reset,
     setValue,
     trigger,
-    formState: { errors },
+    formState: { errors }
   } = useForm<IContactApiRequestBody>({
     defaultValues,
     resolver: yupResolver(
@@ -50,45 +38,36 @@ export const ContactForm = () => {
           .required('Give me your contact for getting back to you')
           .min(5, 'Contact information seems incomplete'),
         message: Yup.string().required('Say me anything...').min(4, 'Say me anything...'),
-        recaptcha: Yup.string().required('Are you a human?').nullable(),
+        recaptcha: Yup.string().required('Are you a human?').nullable()
       })
-    ),
+    )
   });
 
   const inputGroupProps: InputGroupProps = {
     // bg: 'white',
   };
 
-  const { mutate, isLoading } = useMutation(
-    'contactFormSubmit',
-    (data: IContactApiRequestBody) => {
-      pushGAEvent('contact form submit', JSON.stringify(data), 'Form submission', 1);
-      return axios.post(
-        `/`,
-        { 'form-name': 'contact', ...data },
-        {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          },
-        }
-      );
-    },
-    {
+  const { mutateAsync, isLoading } = useMutation({
+      mutationKey: 'contactFormSubmit',
+      mutationFn: (data) => {
+        console.log('finding', data);
+        return axios.post('/api/contact', data);
+      },
       onSuccess: () => {
         resetForm();
         successToast({
           title: 'Your message has been received',
-          description: "I'll reach out to you soon.",
+          description: 'I\'ll reach out to you soon.'
         });
       },
       onError: (error) => {
         errorToast(error);
-      },
+      }
     }
   );
 
   const onSubmit = async (data: any) => {
-    mutate(data);
+    mutateAsync(data);
   };
 
   const resetForm = () => {
@@ -157,7 +136,7 @@ export const ContactForm = () => {
             variant='link'
             colorScheme='blue'
             _focus={{
-              border: 0,
+              border: 0
             }}
             onClick={resetForm}
           >
