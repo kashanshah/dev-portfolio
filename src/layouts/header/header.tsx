@@ -21,6 +21,7 @@ export const Header = (props: HeaderProps) => {
       <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       <meta name='language' content={language || locale} />
       <meta name='author' content={author || trans(constants?.seo?.author)} />
+      <meta name='google-site-verification' content='T2WUGCvAZzciF-akxZlekJq4gPvCWssMnUQM6sNhRzw' />
     </NextHead>
   );
 };
