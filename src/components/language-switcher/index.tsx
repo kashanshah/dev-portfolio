@@ -39,7 +39,7 @@ export const LanguageSwitcher = (props: BoxProps) => {
           {languages.map(([key, value], index) => {
             return (
               <MenuItem
-                key-={`${value}-${index}`}
+                key={`${value}-${index}`}
                 onClick={() => {
                   window.location.href = `/${key + pathname}`;
                 }}
