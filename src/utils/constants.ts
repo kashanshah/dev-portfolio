@@ -19,12 +19,14 @@ export const constants: ConstantsType = {
     author: 'Kashan Shah',
   },
   languages: {
-    en: { en: 'English', ur: 'انگریزی' },
-    ur: { en: 'Urdu', ur: 'اردو' },
+    en: { en: 'English', ur: 'انگریزی', ar: 'عربي' },
+    ar: { en: 'Arabic', ur: 'اردو', ar: 'عربي' },
+    ur: { en: 'Urdu', ur: 'اردو', ar: 'عربي' },
   },
   resume: {
     linkText: {
-      en: 'View My Resume',
+      en: 'عرض سيرتي الذاتية',
+      ar: 'میرا ریزیومے دیکھیں',
       ur: 'میرا ریزیومے دیکھیں',
     },
     link: { en: '/docs/resume-syed-kashan-ali-shah.pdf' },
@@ -34,6 +36,7 @@ export const constants: ConstantsType = {
   skills: {
     buttonText: {
       en: 'View My Skills',
+      ar: 'عرض مهاراتي',
       ur: 'میری مہارتیں دیکھیں',
     },
     linkedInUrl: { en: 'https://www.linkedin.com/in/kashanshah/details/skills/' },
@@ -115,6 +118,7 @@ export const constants: ConstantsType = {
   socialLinks: {
     label: {
       en: 'Connect me on',
+      ar: 'ربطني على',
       ur: 'مجھ سے جڑیں۔',
     },
     links: {
@@ -159,20 +163,24 @@ export const constants: ConstantsType = {
     },
     introText: {
       en: 'Frontend Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB \n from Pakistan \uD83C\uDDF5\uD83C\uDDF0 \n coding in Dubai \uD83C\uDDE6\uD83C\uDDEA',
+      ar: 'أنا مطور الواجهة الأمامية\uD83E\uDDD1\u200D\uD83D\uDCBB \n انا من باكستان \uD83C\uDDF5\uD83C\uDDF0 \n العمل والعيش في دبي ، الامارات. \uD83C\uDDE6\uD83C\uDDEA',
       ur: 'میں ایک فرنٹ اینڈ ڈویلپر ہوں۔\uD83E\uDDD1\u200D\uD83D\uDCBB \n میرا تعلق پاکستان سے ہے۔\uD83C\uDDF5\uD83C\uDDF0 \n میں دبئی میں مقیم ہوں۔\uD83C\uDDE6\uD83C\uDDEA',
     },
     emailMeText: {
       en: 'you can email me as well',
+      ar: 'يمكنك مراسلتي عبر البريد الإلكتروني أيضًا',
       ur: 'آپ مجھے ای میل بھی کر سکتے ہیں۔',
     },
     contactPageLinkText: {
       en: 'Say me hi',
+      ar: 'قل لي مرحبا',
       ur: 'مجھ سے رابطہ کریں۔',
     },
   },
   builtWith: {
     triggerTooltip: {
       en: 'See what is used to build this...',
+      ar: 'تعرف على ما يتم استخدامه لبناء هذا ...',
       ur: 'یہ ویب سائٹ ان چیزوں کے ساتھ بنائی گئی ہے۔',
     },
     items: [
@@ -265,60 +273,73 @@ export const constants: ConstantsType = {
   contactForm: {
     heading: {
       en: 'Say hi to me',
+      ar: 'يقول مرحبا لي',
       ur: 'مجھ سے رابطہ کریں',
     },
     homePageLinkText: {
       en: 'Go back to home page',
+      ar: 'ارجع الى الصفحة الرئيسية',
       ur: 'ہوم پیج پر جائیں۔',
     },
     emailLinkText: {
       en: 'or you can email me as well',
+      ar: 'أو يمكنك مراسلتي عبر البريد الإلكتروني أيضًا',
       ur: 'آپ مجھے بھی ای میل کر سکتے ہیں۔',
     },
     submitBtnText: {
       en: 'Send',
+      ar: 'إرسال',
       ur: 'بھیجیں',
     },
     resetBtnText: {
       en: 'Reset Form',
+      ar: 'نموذج إعادة التعيين',
       ur: 'ری سیٹ',
     },
   },
   languageSwitcher: {
     title: {
       en: 'Change language',
+      ar: 'تغيير اللغة',
       ur: 'زبان تبدیل کریں',
     },
   },
   darkModeSwitcher: {
     disabled: {
       en: 'Enable dark mode',
+      ar: 'تفعيل الوضع المظلم',
       ur: 'ڈارک موڈ فعال کریں',
     },
     enabled: {
       en: 'Disable dark mode',
+      ar: 'تعطيل الوضع الداكن',
       ur: 'ڈارک موڈ بند کریں',
     },
   },
   stringTranslations: {
     txt_your_name: {
       en: 'Your name',
+      ar: 'الاسم الكامل',
       ur: 'آپ کا نام',
     },
     txt_your_email: {
       en: 'Your email',
+      ar: 'البريد الالكتروني',
       ur: 'آپ کا ای میل',
     },
     txt_your_message: {
       en: 'Your message',
+      ar: 'رسالتك',
       ur: 'آپ کا پیغام',
     },
     txt_or: {
       en: 'Or',
+      ar: 'أو',
       ur: 'یا',
     },
     txt_loading: {
       en: 'Loading',
+      ar: 'جاري التحميل',
       ur: 'لوڈ ہو رہا ہے',
     },
   },
