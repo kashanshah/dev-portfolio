@@ -5,6 +5,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { trans } from '@utils/trans';
 import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Tooltip } from '@components/tooltip/tooltip';
 
 export const LanguageSwitcher = (props: BoxProps) => {
   const languages = Object.entries(constants?.languages);
@@ -18,22 +19,24 @@ export const LanguageSwitcher = (props: BoxProps) => {
   return (
     <>
       <Menu>
-        <Box fontSize='1.9em' {...props} title={trans(constants?.languageSwitcher?.title)}>
-          <Flex
-            cursor='pointer'
-            width='1.5em'
-            height='1.5em'
-            border='1px solid'
-            bg='gray.200'
-            justifyContent='center'
-            alignItems='center'
-          >
-            <MenuButton>
-              <Text color='yellow.500'>
-                <GlobalOutlined />
-              </Text>
-            </MenuButton>
-          </Flex>
+        <Box fontSize='1.9em' {...props}>
+          <Tooltip label={trans(constants?.languageSwitcher?.title)}>
+            <Flex
+              cursor='pointer'
+              width='1.5em'
+              height='1.5em'
+              border='1px solid'
+              bg='gray.200'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <MenuButton>
+                <Text color='yellow.500'>
+                  <GlobalOutlined />
+                </Text>
+              </MenuButton>
+            </Flex>
+          </Tooltip>
         </Box>
         <MenuList aria-haspopup={'true'} minWidth='150px' p={0}>
           {languages.map(([key, value], index) => {
