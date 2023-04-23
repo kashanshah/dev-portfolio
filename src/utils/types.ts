@@ -85,5 +85,9 @@ export type ConstantsType = {
   languageSwitcher: {
     title: MultiLingualString;
   };
+  darkModeSwitcher: {
+    enabled: MultiLingualString;
+    disabled: MultiLingualString;
+  };
   stringTranslations: IKeyValuePair<MultiLingualString>;
 };

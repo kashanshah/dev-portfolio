@@ -290,6 +290,16 @@ export const constants: ConstantsType = {
       ur: 'زبان تبدیل کریں',
     },
   },
+  darkModeSwitcher: {
+    disabled: {
+      en: 'Enable dark mode',
+      ur: 'ڈارک موڈ فعال کریں',
+    },
+    enabled: {
+      en: 'Disable dark mode',
+      ur: 'ڈارک موڈ بند کریں',
+    },
+  },
   stringTranslations: {
     txt_your_name: {
       en: 'Your name',
