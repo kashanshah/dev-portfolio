@@ -19,14 +19,14 @@ export const constants: ConstantsType = {
     author: 'Kashan Shah',
   },
   languages: {
-    en: { en: 'English', ur: 'انگریزی', ar: 'عربي' },
-    ar: { en: 'Arabic', ur: 'اردو', ar: 'عربي' },
-    ur: { en: 'Urdu', ur: 'اردو', ar: 'عربي' },
+    en: { en: 'English', ur: 'English', ar: 'English' },
+    ar: { en: 'عربي', ur: 'عربي', ar: 'عربي' },
+    ur: { en: 'اردو', ur: 'اردو', ar: 'اردو' },
   },
   resume: {
     linkText: {
-      en: 'عرض سيرتي الذاتية',
-      ar: 'میرا ریزیومے دیکھیں',
+      en: 'View my resume',
+      ar: 'عرض سيرتي الذاتية',
       ur: 'میرا ریزیومے دیکھیں',
     },
     link: { en: '/docs/resume-syed-kashan-ali-shah.pdf' },
