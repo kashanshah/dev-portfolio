@@ -29,7 +29,7 @@ export const constants: ConstantsType = {
       ar: 'عرض سيرتي الذاتية',
       ur: 'میرا ریزیومے دیکھیں',
     },
-    link: { en: '/docs/resume-syed-kashan-ali-shah.pdf' },
+    link: { en: '/docs/resume-syed-kashan-ali-shah.pdf?v=1' },
   },
   apiBaseUrl: { en: 'https://msenterprises.pk/apis' },
   isReduxPersistEnabled: false,
