@@ -16,7 +16,7 @@ export const SocialLinks = () => {
   return (
     <Stack spacing='2' align='center'>
       <Text>{trans(constants?.socialLinks?.label)}</Text>
-      <Flex>
+      <Flex gap="1rem">
         {Object.keys(constants?.socialLinks?.links).map((link, index) => {
           const socialLink = constants.socialLinks?.links?.[link];
           return (
@@ -32,7 +32,7 @@ export const SocialLinks = () => {
                 pushGAEvent('click', socialLink.link, 'Social link click', 1);
               }}
             >
-              <Button variant='link' colorScheme={socialLink.colorScheme} fontSize='2xl' aria-label={link}>
+              <Button variant='link' colorScheme={socialLink.colorScheme} style={{fontSize: 48}} aria-label={link}>
                 <IconMapper icon={socialLink.icon ?? 'link'} />
               </Button>
             </Link>
