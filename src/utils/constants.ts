@@ -10,7 +10,7 @@ export const constants: ConstantsType = {
       ur: 'سيد كاشان علي شاه',
     },
     description: {
-      en: "I'm a frontend engineer, from Pakistan living in Dubai, with 6+ years experience working with React, NextJS, HTML, CSS, Javascript and also WordPress.",
+      en: "I'm a frontend engineer, with 8+ years experience working with React, NextJS, HTML, CSS, Javascript and also WordPress.",
     },
     keywords: {
       en: 'Web Developer, frontend engineer, software engineer, React JS, Next JS, Gatsby, HTL, CSS, Javascript, UI Developer, WordPress',
@@ -162,9 +162,9 @@ export const constants: ConstantsType = {
       ur: 'سيد كاشان علي شاه',
     },
     introText: {
-      en: 'Frontend Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB \n from Pakistan \uD83C\uDDF5\uD83C\uDDF0 \n coding in Dubai \uD83C\uDDE6\uD83C\uDDEA',
-      ar: 'أنا مطور الواجهة الأمامية\uD83E\uDDD1\u200D\uD83D\uDCBB \n انا من باكستان \uD83C\uDDF5\uD83C\uDDF0 \n العمل والعيش في دبي ، الامارات. \uD83C\uDDE6\uD83C\uDDEA',
-      ur: 'میں ایک فرنٹ اینڈ ڈویلپر ہوں۔\uD83E\uDDD1\u200D\uD83D\uDCBB \n میرا تعلق پاکستان سے ہے۔\uD83C\uDDF5\uD83C\uDDF0 \n میں دبئی میں مقیم ہوں۔\uD83C\uDDE6\uD83C\uDDEA',
+      en: 'Frontend Engineer\uD83E\uDDD1\u200D\uD83D\uDCBB',
+      ar: 'أنا مطور الواجهة الأمامية\uD83E\uDDD1\u200D\uD83D\uDCBB',
+      ur: 'میں ایک فرنٹ اینڈ ڈویلپر ہوں۔\uD83E\uDDD1\u200D\uD83D\uDCBB',
     },
     emailMeText: {
       en: 'you can email me as well',
